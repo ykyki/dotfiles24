@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help all clean test $(wildcard test/*)
+.PHONY: help all clean test
 
 help:
 	@echo "Usage: make [target]"
@@ -49,12 +49,12 @@ test:
 	@echo "TODO"
 
 USERNAME = ykyki
-LOCAL_IMAGE_NAME = d24-local
-test/container-local:
-	podman build -t $(LOCAL_IMAGE_NAME):latest $@
-	podman run -it --rm -v ${PWD}/:/home/${USERNAME}/dotfiles24 localhost/$(LOCAL_IMAGE_NAME):latest
+IMAGE_NAME = d24-ubuntu
+test-container-local:
+	podman build -t $(IMAGE_NAME):latest test/container
+	podman run -it --rm -v ${PWD}/:/home/${USERNAME}/dotfiles24 localhost/$(IMAGE_NAME):latest
 
-REMOTE_IMAGE_NAME = d24-remote
-test/container-remote:
-	podman build --no-cache -t $(REMOTE_IMAGE_NAME):latest $@
-	podman run -it --rm localhost/$(REMOTE_IMAGE_NAME):latest
+test-container-remote:
+	podman build -t $(IMAGE_NAME):latest test/container
+	podman run -it --rm localhost/$(IMAGE_NAME):latest \
+	zsh -c 'git clone https://github.com/ykyki/dotfiles24.git && zsh'

@@ -20,6 +20,6 @@ RUN echo 'export LANG=en_US.UTF-8' >> ~/.zshrc && \
     echo 'export LC_ALL=en_US.UTF-8' >> ~/.zshrc && \
     echo 'PROMPT="%n@%m:%~%# "' >> ~/.zshrc
 
-WORKDIR /home/${USERNAME}/dotfiles24
+WORKDIR /home/${USERNAME}
 
 CMD ["/bin/zsh"]
