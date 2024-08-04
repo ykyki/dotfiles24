@@ -4,14 +4,9 @@ ARG USERNAME=ykyki
 ARG PASSWORD=hogehoge
 
 RUN apt-get update \
-    && apt-get install -y git make sudo \
+    && apt-get install -y git make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-RUN useradd -m -r -G sudo -s /bin/bash ${USERNAME}
-RUN echo "root:${PASSWORD}" | chpasswd
-RUN echo "${USERNAME}:${PASSWORD}" | chpasswd
-RUN echo '%sudo ALL=(ALL) ALL' | EDITOR='tee -a' visudo
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}/dotfiles24
