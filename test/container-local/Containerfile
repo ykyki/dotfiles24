@@ -1,7 +1,7 @@
 FROM docker.io/library/ubuntu:latest AS base
 
 RUN apt-get update \
-    && apt-get install -y git \
+    && apt-get install -y git make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

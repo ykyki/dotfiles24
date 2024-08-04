@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help all clean test $(wildcard test/*)
+.PHONY: help all clean test $(wildcard test/*) git
 
 help:
 	@echo "Usage: make [target]"
@@ -19,6 +19,16 @@ all-install:
 
 clean:
 	@echo "TODO"
+
+git:
+	test -L ${HOME}/.gitconfig || ln -sv ${PWD}/git/.gitconfig ${HOME}/.gitconfig
+	test -d ${HOME}/.config/git || mkdir -p ${HOME}/.config/git
+	test -L ${HOME}/.config/git/ignore || ln -sv ${PWD}/git/.gitignore_global ${HOME}/.config/git/ignore
+
+clean-git:
+	! test -L ${HOME}/.gitconfig || unlink ${HOME}/.gitconfig
+	! test -L ${HOME}/.config/git/ignore || unlink ${HOME}/.config/git/ignore
+	! test -d ${HOME}/.config/git || rmdir ${HOME}/.config/git
 
 test:
 	@echo "TODO"
