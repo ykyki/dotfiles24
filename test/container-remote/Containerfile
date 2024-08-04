@@ -1,12 +1,26 @@
 FROM docker.io/library/ubuntu:latest AS base
 
+ARG USERNAME=ykyki
+ARG PASSWORD=hogehoge
+
 RUN apt-get update \
-    && apt-get install -y git make \
+    && apt-get install -y make zsh git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /workdir/dotfiles
+# RUN chsh -s /bin/zsh
 
-RUN git clone https://github.com/ykyki/dotfiles24.git ./
+RUN useradd -m -r -s /bin/zsh ${USERNAME}
+RUN echo "root:${PASSWORD}" | chpasswd
+RUN echo "${USERNAME}:${PASSWORD}" | chpasswd
 
-CMD ["/bin/bash"]
+USER ${USERNAME}
+
+RUN echo 'export LANG=en_US.UTF-8' >> ~/.zshrc && \
+    echo 'export LC_ALL=en_US.UTF-8' >> ~/.zshrc && \
+    echo 'PROMPT="%n@%m:%~%# "' >> ~/.zshrc
+
+WORKDIR /home/${USERNAME}
+RUN git clone https://github.com/ykyki/dotfiles24.git
+
+CMD ["/bin/zsh"]

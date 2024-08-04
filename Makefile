@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help all clean test $(wildcard test/*) git
+.PHONY: help all clean test $(wildcard test/*)
 
 help:
 	@echo "Usage: make [target]"
@@ -14,17 +14,32 @@ help:
 all:
 	@echo "TODO"
 
-all-install:
+all-setup:
 	@echo "TODO"
 
 clean:
 	@echo "TODO"
 
+.PHONY: zsh clean-zsh
+ZSHMY_PATH=${HOME}/.zshmy
+zsh:
+	test -L ${HOME}/.zshrc || ln -sv ${PWD}/zsh/.zshrc ${HOME}/.zshrc
+	test -f ${HOME}/.zlogout || cp ${PWD}/zsh/.zlogout.example ${HOME}/.zlogout
+	test -d ${ZSHMY_PATH} || mkdir -p ${ZSHMY_PATH}
+	test -L ${ZSHMY_PATH}/common.zsh || ln -sv ${PWD}/zsh/common.zsh ${ZSHMY_PATH}/common.zsh
+	test -f ${ZSHMY_PATH}/local.zsh || cp ${PWD}/zsh/local.example.zsh ${ZSHMY_PATH}/local.zsh
+clean-zsh:
+	! test -L ${HOME}/.zshrc || unlink ${HOME}/.zshrc
+	! test -f ${HOME}/.zlogout || rm ${HOME}/.zlogout
+	! test -L ${ZSHMY_PATH}/common.zsh || unlink ${ZSHMY_PATH}/common.zsh
+	! test -f ${ZSHMY_PATH}/local.zsh || rm ${ZSHMY_PATH}/local.zsh
+	! test -d ${ZSHMY_PATH} || rmdir ${ZSHMY_PATH}
+
+.PHONY: git clean-git
 git:
 	test -L ${HOME}/.gitconfig || ln -sv ${PWD}/git/.gitconfig ${HOME}/.gitconfig
 	test -d ${HOME}/.config/git || mkdir -p ${HOME}/.config/git
 	test -L ${HOME}/.config/git/ignore || ln -sv ${PWD}/git/.gitignore_global ${HOME}/.config/git/ignore
-
 clean-git:
 	! test -L ${HOME}/.gitconfig || unlink ${HOME}/.gitconfig
 	! test -L ${HOME}/.config/git/ignore || unlink ${HOME}/.config/git/ignore

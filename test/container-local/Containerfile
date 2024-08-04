@@ -4,11 +4,22 @@ ARG USERNAME=ykyki
 ARG PASSWORD=hogehoge
 
 RUN apt-get update \
-    && apt-get install -y git make \
+    && apt-get install -y make zsh git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# RUN chsh -s /bin/zsh
+
+RUN useradd -m -r -s /bin/zsh ${USERNAME}
+RUN echo "root:${PASSWORD}" | chpasswd
+RUN echo "${USERNAME}:${PASSWORD}" | chpasswd
+
 USER ${USERNAME}
+
+RUN echo 'export LANG=en_US.UTF-8' >> ~/.zshrc && \
+    echo 'export LC_ALL=en_US.UTF-8' >> ~/.zshrc && \
+    echo 'PROMPT="%n@%m:%~%# "' >> ~/.zshrc
+
 WORKDIR /home/${USERNAME}/dotfiles24
 
-CMD ["/bin/bash"]
+CMD ["/bin/zsh"]
