@@ -33,10 +33,11 @@ clean-git:
 test:
 	@echo "TODO"
 
+USERNAME = ykyki
 LOCAL_IMAGE_NAME = d24-local
 test/container-local:
 	podman build -t $(LOCAL_IMAGE_NAME):latest $@
-	podman run -it --rm -v ${PWD}/:/workdir/dotfiles localhost/$(LOCAL_IMAGE_NAME):latest
+	podman run -it --rm -v ${PWD}/:/home/${USERNAME}/dotfiles24 localhost/$(LOCAL_IMAGE_NAME):latest
 
 REMOTE_IMAGE_NAME = d24-remote
 test/container-remote:
