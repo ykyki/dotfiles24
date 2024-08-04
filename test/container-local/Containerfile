@@ -1,0 +1,10 @@
+FROM docker.io/library/ubuntu:latest AS base
+
+RUN apt-get update \
+    && apt-get install -y git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workdir/dotfiles
+
+CMD ["/bin/bash"]
