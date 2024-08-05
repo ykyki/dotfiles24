@@ -4,7 +4,7 @@
 	editor     = vim
 [init]
 	defaultBranch = main
-	templatedir = ~/dotfiles/.git_template # FIX
+	# templatedir = ~/dotfiles/.git_template # FIX
 [push]
 	default = simple
 	followTags = true
