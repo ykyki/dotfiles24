@@ -37,6 +37,9 @@ tmux:
 .PHONY: vim
 vim:
 	test -L ${HOME}/.vimrc || ln -sv ${PWD}/vim/.vimrc ${HOME}/.vimrc
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@# vim +PlugInstall +qall
+	vim -es -u ${HOME}/.vimrc +PlugInstall +qall
 
 .PHONY: container-local container-remote
 USER_NAME = ykyki

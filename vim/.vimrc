@@ -154,3 +154,73 @@ augroup vimrc-auto-cursorline
         endif
     endfunction
 augroup END
+
+call plug#begin()
+    " https://github.com/tpope/vim-sensible
+    Plug 'tpope/vim-sensible'
+
+    " https://github.com/junegunn/seoul256.vim
+    Plug 'junegunn/seoul256.vim'
+
+    " https://github.com/ctrlpvim/ctrlp.vim
+    Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
+
+" ----- seoul256.vim
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+let g:seoul256_background = 233
+silent! colorscheme seoul256
+
+" ----- ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_tabpage_position  = 'ac'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer     = 'et'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_depth = 15
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_lazy_update = 10
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|venv|target|\.next)$',
+    \ 'file': '\v\.(exe|bat|bin|so|dll|jpg|png|pdf|dvi|aux|blg|log|thm|idx|synctex.gz|fls|out|fdb_latexmk|nav|snm|sta|ilg|ind|DS_Store|gitkeep|class)$',
+\ }
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtBS()':              ['<bs>', '<c-]>'],
+    \ 'PrtDelete()':          ['<del>'],
+    \ 'PrtDeleteWord()':      ['<c-w>'],
+    \ 'PrtClear()':           ['<c-u>'],
+    \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+    \ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
+    \ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
+    \ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
+    \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
+    \ 'PrtHistory(-1)':       ['<c-k>'],
+    \ 'PrtHistory(1)':        ['<c-j>'],
+    \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("h")': ['<c-h>'],
+    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'ToggleFocus()':        ['<s-tab>'],
+    \ 'ToggleRegex()':        ['<c-s>'],
+    \ 'ToggleByFname()':      ['<c-d>'],
+    \ 'ToggleType(1)':        ['<c-f>', '<c-up>'],
+    \ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
+    \ 'PrtExpandDir()':       ['<tab>'],
+    \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
+    \ 'PrtInsert()':          ['<c-\>'],
+    \ 'PrtCurStart()':        ['<c-a>'],
+    \ 'PrtCurEnd()':          ['<c-e>'],
+    \ 'PrtCurLeft()':         ['<left>', '<c-^>'],
+    \ 'PrtCurRight()':        ['<c-l>', '<right>'],
+    \ 'PrtClearCache()':      ['<F5>', '<c-r>'],
+    \ 'PrtDeleteEnt()':       ['<F7>'],
+    \ 'CreateNewFile()':      ['<c-y>'],
+    \ 'MarkToOpen()':         ['<c-z>'],
+    \ 'OpenMulti()':          [],
+    \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
+\ }
