@@ -1,0 +1,9 @@
+set -g prefix C-]
+unbind C-q
+
+set -g status-position bottom
+# status line の背景色を指定する。
+set -g status-bg "colour117"
+# status line の文字色を指定する。
+set -g status-fg "colour235"
+

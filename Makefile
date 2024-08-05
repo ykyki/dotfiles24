@@ -45,6 +45,12 @@ clean-git:
 	! test -L ${HOME}/.config/git/ignore || unlink ${HOME}/.config/git/ignore
 	! test -d ${HOME}/.config/git || rmdir ${HOME}/.config/git
 
+.PHONY: tmux clean-tmux
+tmux:
+	test -L ${HOME}/.tmux.conf || ln -sv ${PWD}/tmux/.tmux.conf ${HOME}/.tmux.conf
+clean-tmux:
+	! test -L ${HOME}/.tmux.conf || unlink ${HOME}/.tmux.conf
+
 test:
 	@echo "TODO"
 
