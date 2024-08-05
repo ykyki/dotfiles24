@@ -159,12 +159,33 @@ call plug#begin()
     " https://github.com/tpope/vim-sensible
     Plug 'tpope/vim-sensible'
 
+    " https://github.com/tpope/vim-commentary
+    Plug 'tpope/vim-commentary'
+
+    " https://github.com/tpope/vim-surround
+    Plug 'tpope/vim-surround'
+
+    " https://github.com/machakann/vim-highlightedyank
+    Plug 'machakann/vim-highlightedyank'
+
+    " https://github.com/michaeljsmith/vim-indent-object
+    Plug 'michaeljsmith/vim-indent-object'
+
     " https://github.com/junegunn/seoul256.vim
     Plug 'junegunn/seoul256.vim'
+
+    " https://github.com/ryanoasis/vim-devicons
+    Plug 'ryanoasis/vim-devicons'
+
+    " https://github.com/preservim/vim-indent-guides
+    Plug 'nathanaelkane/vim-indent-guides'
 
     " https://github.com/ctrlpvim/ctrlp.vim
     Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
+
+" ----- vim-highlightedyank
+let g:highlightedyank_highlight_duration = 500
 
 " ----- seoul256.vim
 " seoul256 (dark):
@@ -172,6 +193,13 @@ call plug#end()
 "   Default: 237
 let g:seoul256_background = 233
 silent! colorscheme seoul256
+
+" ----- vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
+
 
 " ----- ctrlp.vim
 let g:ctrlp_map = '<c-p>'
