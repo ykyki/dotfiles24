@@ -34,6 +34,10 @@ git:
 tmux:
 	test -L ${HOME}/.tmux.conf || ln -sv ${PWD}/tmux/.tmux.conf ${HOME}/.tmux.conf
 
+.PHONY: vim
+vim:
+	test -L ${HOME}/.vimrc || ln -sv ${PWD}/vim/.vimrc ${HOME}/.vimrc
+
 .PHONY: container-local container-remote
 USER_NAME = ykyki
 IMAGE_NAME = d24-ubuntu
