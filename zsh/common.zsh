@@ -6,9 +6,20 @@ alias cdd='cd $HOME/dotfiles24 && git fetch'
 
 alias cdgt='cd $(git rev-parse --show-toplevel); pwd'
 alias cdg='cd-git-repository && git fetch'
+alias cdgq='cd-git-repository'
 function cd-git-repository () {
     local ROOT=$(ghq root)
-    local REPO=$(ghq list | fzf --delimiter=/ --reverse +m --inline-info --border --preview "tree -L 1 $ROOT/{} | head -100" --prompt="Repository > ")
+    local REPO=$(
+        ghq list \
+        | fzf \
+        --delimiter=/ \
+        --reverse \
+        +m \
+        --inline-info \
+        --border \
+        --preview "tree -L 1 $ROOT/{} | head -100" \
+        --prompt="Repository > "
+    )
     if   [ -n "$REPO" ]; then
         echo $REPO
         cd $ROOT/$REPO
