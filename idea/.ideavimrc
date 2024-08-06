@@ -1,0 +1,62 @@
+set clipboard&
+set clipboard^=unnamed,unnamedplus
+set sneak
+set ignorecase smartcase
+set hlsearch
+set highlightedyank
+
+inoremap jk <ESC>
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+nnoremap Y y$
+vnoremap < <gv
+vnoremap > >gv
+nnoremap gJ :tabmove -1<CR>
+nnoremap gK :tabmove +1<CR>
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q  <Nop>
+
+nnoremap J :tabp<CR>
+nnoremap K :tabn<CR>
+
+set commentary
+" nnoremap gcc :action CommentByLineComment<CR>
+" vnoremap gc :action CommentByLineComment<CR>
+" vnoremap gc :action CommentByBlockComment<CR>
+
+set textobj-indent
+
+set multiple-cursors
+nmap gb <A-n>
+vmap gb <A-n>
+
+set surround
+
+set easymotion
+let g:EasyMotion_do_mapping = 0
+nmap <Space>f <Plug>(easymotion-bd-w)
+
+nnoremap ,a :action GotoAction<CR>
+vnoremap ,a :action GotoAction<CR>
+nnoremap ,e :action SearchEverywhere<CR>
+nnoremap ,p :action FindInPath<CR>
+nnoremap ,r :action Run<CR>
+nnoremap ,R :action RunClass<CR>
+nnoremap ,s :action FileStructurePopup<CR>
+nnoremap ,u :action FindUsages<CR>
+" nnoremap R :action RenameElement<CR>
+" nnoremap <C-CR> :action ShowIntentionActions<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+" nnoremap gs :action GotoSuperMethod<CR>
+" nnoremap gi :action GotoImplementation<CR>
+" nnoremap gb :action JumpToLastChange<CR>
+nnoremap gh :action QuickJavaDoc<CR>
+nnoremap <C-j> :action ShowErrorDescription<CR>
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+

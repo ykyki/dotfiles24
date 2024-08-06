@@ -38,6 +38,10 @@ vim:
 tig:
 	test -L ${HOME}/.tigrc || ln -sv ${PWD}/tig/.tigrc ${HOME}/.tigrc
 
+.PHONY: idea
+idea:
+	test -L ${HOME}/.ideavimrc || ln -sv ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
+
 .PHONY: container-local container-remote
 USER_NAME = ykyki
 IMAGE_NAME = d24-ubuntu
