@@ -1,19 +1,12 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help all clean test
-
+.PHONY: help
 help:
 	@echo "Usage: make [target]"
 	@echo ""
 	@echo "Targets:"
 	@echo "  help          Show this help message"
-	@echo "  all           Run all the setup steps"
-
-all:
-	@echo "TODO"
-
-all-setup:
-	@echo "TODO"
+	@echo "  ...           (TODO)"
 
 .PHONY: zsh
 ZSHMY_PATH=${HOME}/.zshmy
@@ -40,6 +33,10 @@ vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@# vim +PlugInstall +qall
 	vim -es -u ${HOME}/.vimrc +PlugInstall +qall
+
+.PHONY: tig
+tig:
+	test -L ${HOME}/.tigrc || ln -sv ${PWD}/tig/.tigrc ${HOME}/.tigrc
 
 .PHONY: container-local container-remote
 USER_NAME = ykyki

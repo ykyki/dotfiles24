@@ -1,0 +1,29 @@
+# cf. https://github.com/jonas/tig/blob/master/tigrc
+# cf. man tigrc
+
+set blame-view  = id:yes,color file-name:auto author:full date:default line-number:yes,interval=1 text
+set grep-view   = file-name:no line-number:yes,interval=1 text
+set main-view   = line-number:no,interval=5 id:yes date:relative-compact author:full commit-title:yes,graph,refs,overflow=no
+set reflog-view = line-number:no,interval=5 id:yes date:no author:no commit-title:yes,refs,overflow=no
+set refs-view   = line-number:no id:no date:relative-compact author:full ref commit-title
+set stash-view  = line-number:no,interval=5 id:no date:relative-compact author:full commit-title
+set status-view = line-number:no,interval=5 status:short file-name
+set tree-view   = line-number:no,interval=5 mode author:full file-size date:default id:no file-name
+
+color cursor      default  blue bold
+# color diff-header default magenta
+# color diff-chunk  black   white
+
+# set vertical-split = yes
+set vertical-split = no
+# set vertical-split = auto
+set split-view-height = 80%
+
+set diff-context = 5
+# set diff-highlight = true
+
+bind generic I @?sh -c "printf '%s' %(commit) | gocopy"
+bind refs    I @?sh -c "printf '%s' %(branch) | gocopy"
+bind generic g move-first-line
+bind generic G move-last-line
+bind main    G move-last-line
