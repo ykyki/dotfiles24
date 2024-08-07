@@ -44,6 +44,7 @@ function my_set_prompt() {
     PROMPT+='%#'
     PROMPT+=' '
     RPROMPT=''
+    RPROMPT+='[%?]'
     if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
         RPROMPT+="%{$fg[yellow]%}"
         RPROMPT+='@'
@@ -57,6 +58,10 @@ function my_set_prompt() {
         (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED && RPROMPT+="%{$reset_color%}"
         (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS && RPROMPT+="%{$reset_color%}"
         (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED   && RPROMPT+="%{$reset_color%}"
+    else
+        RPROMPT+="%{$fg[yellow]%}"
+        RPROMPT+='%3d'
+        RPROMPT+="%{$reset_color%}"
     fi
     setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
 }
