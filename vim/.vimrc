@@ -160,7 +160,7 @@ let g:ctrlp_switch_buffer     = 'et'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_depth = 15
 let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 10
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|venv|target|\.next)$',
