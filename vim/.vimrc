@@ -74,6 +74,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+vnoremap j gj
+vnoremap k gk
+vnoremap gj j
+vnoremap gk k
 " nnoremap <silent> J :bp<CR>
 " nnoremap <silent> K :bn<CR>
 nnoremap <silent> bp :bp<CR>
