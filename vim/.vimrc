@@ -133,6 +133,8 @@ call plug#begin()
 
     " https://github.com/ctrlpvim/ctrlp.vim
     Plug 'ctrlpvim/ctrlp.vim'
+    " Plug 'mattn/ctrlp-matchfuzzy'
+    Plug 'mattn/ctrlp-matchfuzzy'
 call plug#end()
 
 " ----- vim-highlightedyank
@@ -154,14 +156,10 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
 " ----- ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_tabpage_position  = 'ac'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_buffer     = 'et'
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_max_depth = 15
-let g:ctrlp_use_caching = 0
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 10
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|venv|target|\.next)$',
     \ 'file': '\v\.(exe|bat|bin|so|dll|jpg|png|pdf|dvi|aux|blg|log|thm|idx|synctex.gz|fls|out|fdb_latexmk|nav|snm|sta|ilg|ind|DS_Store|gitkeep|class)$',
