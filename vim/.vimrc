@@ -70,25 +70,25 @@ augroup END
 
 " --- Key Mapping
 inoremap jk <ESC>
-nnoremap j gj
-nnoremap k gk
+nnoremap j  gj
+nnoremap k  gk
 nnoremap gj j
 nnoremap gk k
-vnoremap j gj
-vnoremap k gk
+vnoremap j  gj
+vnoremap k  gk
 vnoremap gj j
 vnoremap gk k
-" nnoremap <silent> J :bp<CR>
-" nnoremap <silent> K :bn<CR>
+" nnoremap <silent> J  :bp<CR>
+" nnoremap <silent> K  :bn<CR>
 nnoremap <silent> bp :bp<CR>
 nnoremap <silent> bn :bn<CR>
-nnoremap <silent> X :bd<CR>
-nnoremap <silent> J :tabp<CR>
-nnoremap <silent> K :tabn<CR>
-" nnoremap <silent> X :tabc<CR>
+nnoremap <silent> X  :bd<CR>
+nnoremap <silent> J  :tabp<CR>
+nnoremap <silent> K  :tabn<CR>
+" nnoremap <silent> X  :tabc<CR>
 nnoremap <silent> gJ :tabmove -1<CR>
 nnoremap <silent> gK :tabmove +1<CR>
-nnoremap <silent> gT :tab sp<CR>
+nnoremap <silent> gT :tab     sp<CR>
 nnoremap Y y$
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
@@ -116,11 +116,24 @@ call plug#begin()
     " https://github.com/tpope/vim-surround
     Plug 'tpope/vim-surround'
 
+    " https://github.com/jiangmiao/auto-pairs
+    Plug 'jiangmiao/auto-pairs'
+
+    " https://github.com/michaeljsmith/vim-indent-object
+    Plug 'michaeljsmith/vim-indent-object'
+
+    " https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
+
     " https://github.com/machakann/vim-highlightedyank
     Plug 'machakann/vim-highlightedyank'
 
     " https://github.com/michaeljsmith/vim-indent-object
     Plug 'michaeljsmith/vim-indent-object'
+
+    " https://github.com/junegunn/fzf.vim
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     " https://github.com/junegunn/seoul256.vim
     Plug 'junegunn/seoul256.vim'
@@ -131,14 +144,41 @@ call plug#begin()
     " https://github.com/preservim/vim-indent-guides
     Plug 'nathanaelkane/vim-indent-guides'
 
+    " https://github.com/luochen1990/rainbow
+    Plug 'luochen1990/rainbow'
+
     " https://github.com/ctrlpvim/ctrlp.vim
     Plug 'ctrlpvim/ctrlp.vim'
     " Plug 'mattn/ctrlp-matchfuzzy'
     Plug 'mattn/ctrlp-matchfuzzy'
 call plug#end()
 
+" ----- jiangmiao/auto-pairs
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsMapBS   = 1
+let g:AutoPairsMapCh   = 1
+
+" ----- junegunn/vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)
+
 " ----- vim-highlightedyank
 let g:highlightedyank_highlight_duration = 500
+
+" ----- fzf.vim
+let g:fzf_action = {
+    \ 'enter':  'tab split',
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'split',
+    \ 'ctrl-v': 'vsplit'
+    \ }
+let g:fzf_layout = {
+    \ 'window': { 'width': 0.9, 'height': 0.8 }
+    \ }
+" let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_preview_window = ['down:70%']
+command! -bang -nargs=* Rg
+    \ call fzf#vim#grep('rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+    \ fzf#vim#with_preview(), <bang>0)
 
 " ----- seoul256.vim
 " seoul256 (dark):
@@ -149,17 +189,20 @@ silent! colorscheme seoul256
 
 " ----- vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level           = 1
+let g:indent_guides_guide_size            = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
 
+" ----- luochen1990/rainbow
+let g:rainbow_active = 1
+
 " ----- ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_map                 = '<c-p>'
+let g:ctrlp_cmd                 = 'CtrlP'
+let g:ctrlp_show_hidden         = 1
 let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_lazy_update = 10
-let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_lazy_update         = 10
+let g:ctrlp_match_func          = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|venv|target|\.next)$',
     \ 'file': '\v\.(exe|bat|bin|so|dll|jpg|png|pdf|dvi|aux|blg|log|thm|idx|synctex.gz|fls|out|fdb_latexmk|nav|snm|sta|ilg|ind|DS_Store|gitkeep|class)$',
@@ -200,3 +243,4 @@ let g:ctrlp_prompt_mappings = {
     \ 'OpenMulti()':          [],
     \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
 \ }
+
