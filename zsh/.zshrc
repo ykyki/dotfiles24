@@ -87,13 +87,14 @@ zshaddhistory() {
     local cmd=${line%% *}
     # 以下の条件をすべて満たすものだけをヒストリに追加する
     [[ ${#line} -ge 4 # 5文字以上
-        && ${line} != (l[sal]|lla)
-        && ${line} != (history|histories)
         && ${line} != (nvim|nvims)
         && ${line} != tig
         && ${line} != tmux
         && ${cmd}  != pwd
         && ${cmd}  != fg
+        && ${cmd}  != tldr
+        && ${cmd}  != history
+        && ${cmd}  != (l[sal]|lla)
     ]]
 }
 
