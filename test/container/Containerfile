@@ -4,7 +4,7 @@ ARG USERNAME=ykyki
 ARG PASSWORD=hogehoge
 
 RUN apt-get update \
-    && apt-get install -y make sudo curl locales \
+    && apt-get install -y make sudo curl locales gcc \
         zsh git vim neovim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,53 @@
+require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = false,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+      refresh = "gr",
+      open = "<M-CR>"
+    },
+    layout = {
+      position = "bottom", -- | top | left | right
+      ratio = 0.4
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    debounce = 75,
+    keymap = {
+      accept = "<S-Tab>",
+      accept_word = false,
+      accept_line = false,
+      -- next = "<C-S-]>",
+      -- prev = "<C-S-[>",
+      -- dismiss = "<C-]>",
+    },
+  },
+  filetypes = {
+    ["*"] = true, -- for all other filetypes
+    ["."] = false,
+    toml = false,
+    yaml = true,
+    help = false,
+    hgcommit = false,
+    svn = false,
+    gitcommit = true,
+    gitrebase = true,
+    sh = function()
+      if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
+        -- disable for .env files
+        return false
+      end
+      return true
+    end,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 16.x
+  server_opts_overrides = {},
+})
+
+-- vim.api.nvim_command("highlight link CopilotAnnotation LineNr")
+-- vim.api.nvim_command("highlight link CopilotSuggestion LineNr")

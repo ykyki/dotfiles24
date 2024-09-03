@@ -40,6 +40,7 @@ NVIM_CONFIG_DIR := ${HOME}/.config/$(NVIM_APPNAME)
 nvim:
 	mkdir -p ${HOME}/.config
 	test -L $(NVIM_CONFIG_DIR) || ln -sv ${PWD}/nvim $(NVIM_CONFIG_DIR)
+	nvim --headless "+Lazy! sync" +qa
 clean-nvim:
 	unlink $(NVIM_CONFIG_DIR)
 	rm -rf ${HOME}/.local/share/$(NVIM_APPNAME)
