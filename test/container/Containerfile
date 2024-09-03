@@ -4,9 +4,14 @@ ARG USERNAME=ykyki
 ARG PASSWORD=hogehoge
 
 RUN apt-get update \
-    && apt-get install -y make sudo curl zsh git vim \
+    && apt-get install -y make sudo curl locales \
+        zsh git vim neovim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen \
+    && locale-gen
 
 # RUN chsh -s /bin/zsh
 
@@ -24,3 +29,4 @@ RUN echo 'export LANG=en_US.UTF-8' >> ~/.zshrc && \
 WORKDIR /home/${USERNAME}
 
 CMD ["/bin/zsh"]
+

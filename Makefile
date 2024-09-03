@@ -34,6 +34,17 @@ vim:
 	@# vim +PlugInstall +qall
 	vim -es -u ${HOME}/.vimrc +PlugInstall +qall
 
+.PHONY: nvim clean-nvim
+NVIM_APPNAME := nvim
+NVIM_CONFIG_DIR := ${HOME}/.config/$(NVIM_APPNAME)
+nvim:
+	mkdir -p ${HOME}/.config
+	test -L $(NVIM_CONFIG_DIR) || ln -sv ${PWD}/nvim $(NVIM_CONFIG_DIR)
+clean-nvim:
+	unlink $(NVIM_CONFIG_DIR)
+	rm -rf ${HOME}/.local/share/$(NVIM_APPNAME)
+	rm -rf ${HOME}/.local/state/$(NVIM_APPNAME)
+
 .PHONY: tig
 tig:
 	test -L ${HOME}/.tigrc || ln -sv ${PWD}/tig/.tigrc ${HOME}/.tigrc
@@ -43,8 +54,8 @@ idea:
 	test -L ${HOME}/.ideavimrc || ln -sv ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
 
 .PHONY: container-local container-remote
-USER_NAME = ykyki
-IMAGE_NAME = d24-ubuntu
+USER_NAME := ykyki
+IMAGE_NAME := d24-ubuntu
 container-local:
 	podman build -t $(IMAGE_NAME):latest test/container
 	podman run -it --rm -v ${PWD}/:/home/${USER_NAME}/dotfiles24:ro localhost/$(IMAGE_NAME):latest
@@ -52,3 +63,4 @@ container-remote:
 	podman build -t $(IMAGE_NAME):latest test/container
 	podman run -it --rm localhost/$(IMAGE_NAME):latest \
 	zsh -c 'git clone https://github.com/ykyki/dotfiles24.git && zsh'
+
