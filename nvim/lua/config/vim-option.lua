@@ -59,4 +59,3 @@ keymap("v", ">", ">gv", {})
 -- buffer operations
 keymap("n", "<S-k>", ":tabn<CR>", {})
 keymap("n", "<S-j>", ":tabp<CR>", {})
-

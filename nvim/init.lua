@@ -5,4 +5,3 @@ require("config.lazy-nvim")
 -- require("config.lsp")
 
 require("config.colorscheme")
-

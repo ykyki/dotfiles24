@@ -162,43 +162,23 @@ local plugins = {
 
   -- Highlight
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    config = function()
-      require("config.plugin.indent_blankline")
-    end,
-  },
-  {
     "norcalli/nvim-colorizer.lua",
     event = "VeryLazy",
     config = function()
       require("config.plugin.colorizer")
     end,
   },
+  {
+    -- https://github.com/lukas-reineke/indent-blankline.nvim
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VimEnter",
+    main = "ibl",
+    config = function()
+      require("config.plugin.indent_blankline")
+    end,
+  },
 
-  -- AI Integration
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = { "Copilot" },
-  --   event = "InsertEnter",
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("config.plugin.copilot")
-  --     end, 100)
-  --   end,
-  -- },
-
-  -- Wakatime
-  -- {
-  --   "wakatime/vim-wakatime",
-  --   event = "VeryLazy",
-  --   enabled = function()
-  --     return vim.env.WAKATIME_DISABLED ~= "true"
-  --   end,
-  -- },
-
+  -- Local Config
   {
     "klen/nvim-config-local",
     event = "BufEnter",
@@ -206,7 +186,6 @@ local plugins = {
       require("config.plugin.config-local")
     end,
   },
-
 
   -- Language Server Protocol(LSP)
   {
