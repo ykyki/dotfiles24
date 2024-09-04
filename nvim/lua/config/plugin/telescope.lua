@@ -1,7 +1,16 @@
 local telescope = require("telescope")
+local action = require('telescope.actions')
 
-local tele_opts = {
+local opt = {
   defaults = {
+    mappings = {
+      i = {
+        ["<cr>"] = action.select_tab
+      },
+      n = {
+        ["<cr>"] = action.select_tab
+      },
+    },
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -63,10 +72,10 @@ local tele_opts = {
   },
 }
 
-telescope.setup(tele_opts)
+telescope.setup(opt)
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<c-p>', builtin.find_files, {})
+vim.keymap.set('n', '<localleader>p', builtin.live_grep, {})
+vim.keymap.set('n', '<localleader>b', builtin.buffers, {})
+vim.keymap.set('n', '<localleader>h', builtin.help_tags, {})

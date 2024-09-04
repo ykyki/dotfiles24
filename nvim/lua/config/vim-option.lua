@@ -37,3 +37,26 @@ vim.opt.clipboard:prepend({ "unnamedplus" })
 vim.api.nvim_set_var("mapleader", "<Space>")
 vim.api.nvim_set_var("maplocalleader", ",")
 
+-------------------------------
+-- keymaps
+local function keymap(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+keymap("n", "j", "gj", {})
+keymap("n", "k", "gk", {})
+
+-- stay in indent mode
+keymap("v", "<", "<gv", {})
+keymap("v", ">", ">gv", {})
+
+-- buffer operations
+keymap("n", "<S-k>", ":tabn<CR>", {})
+keymap("n", "<S-j>", ":tabp<CR>", {})
+
