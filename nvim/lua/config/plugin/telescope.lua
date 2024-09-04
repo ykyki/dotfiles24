@@ -5,10 +5,10 @@ local opt = {
   defaults = {
     mappings = {
       i = {
-        ["<cr>"] = action.select_tab
+        ["<cr>"] = action.select_tab_drop
       },
       n = {
-        ["<cr>"] = action.select_tab
+        ["<cr>"] = action.select_tab_drop
       },
     },
     vimgrep_arguments = {
