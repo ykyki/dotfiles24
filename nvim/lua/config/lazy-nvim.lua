@@ -19,18 +19,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 local plugins = {
-
-  -- External package Installer
-  -- {
-  --   "williamboman/mason.nvim",
-  --   config = function()
-  --     -- TODO
-  --     require("mason").setup()
-  --   end,
-  -- },
-
   -- Lua Util
-  { "nvim-lua/plenary.nvim" },
+  {
+    -- https://github.com/nvim-lua/plenary.nvim
+    "nvim-lua/plenary.nvim"
+  },
 
   -- Vim Util
   {
@@ -213,6 +206,40 @@ local plugins = {
       require("config.plugin.config-local")
     end,
   },
+
+
+  -- Language Server Protocol(LSP)
+  {
+    -- https://github.com/neovim/nvim-lspconfig
+    "neovim/nvim-lspconfig",
+  },
+  {
+    -- https://github.com/williamboman/mason.nvim
+    "williamboman/mason.nvim",
+    config = function()
+      require("config.plugin.mason")
+    end,
+  },
+  {
+    -- https://github.com/williamboman/mason-lspconfig.nvim
+    "williamboman/mason-lspconfig.nvim",
+    event = "BufReadPre",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+    config = function()
+      require("config.plugin.mason-lspconfig")
+    end,
+  },
+
+  -- {
+  --   -- https://github.com/elentok/format-on-save.nvim
+  --   "elentok/format-on-save.nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("config.plugin.format-on-save")
+  --   end,
+  -- },
 
   -- Color Scheme
   {
