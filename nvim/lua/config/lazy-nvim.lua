@@ -177,9 +177,15 @@ local plugins = {
       require("config.plugin.indent_blankline")
     end,
   },
+  {
+    -- https://github.com/aklt/plantuml-syntax
+    "aklt/plantuml-syntax",
+    ft = "plantuml",
+  },
 
   -- Local Config
   {
+    -- https://github.com/klen/nvim-config-local
     "klen/nvim-config-local",
     event = "BufEnter",
     config = function()
@@ -219,6 +225,15 @@ local plugins = {
   --     require("config.plugin.format-on-save")
   --   end,
   -- },
+
+  -- Markdown
+  {
+    "plasticboy/vim-markdown",
+    ft = "markdown",
+    config = function()
+      require("config.plugin.vim-markdown")
+    end,
+  },
 
   -- Color Scheme
   {
