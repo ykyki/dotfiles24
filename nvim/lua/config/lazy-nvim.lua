@@ -158,13 +158,14 @@ local plugins = {
 
 
   -- Git Integration
-  -- {
-  --   "lewis6991/gitsigns.nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("config.plugin.gitsigns")
-  --   end,
-  -- },
+  {
+    -- https://github.com/lewis6991/gitsigns.nvim
+    "lewis6991/gitsigns.nvim",
+    event = "VimEnter",
+    config = function()
+      require("config.plugin.gitsigns")
+    end,
+  },
 
   -- Highlight
   {
