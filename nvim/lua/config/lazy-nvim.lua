@@ -141,6 +141,19 @@ local plugins = {
       { "yioneko/nvim-yati" },
     },
   },
+  {
+    -- https://github.com/lukas-reineke/headlines.nvim
+    -- TODO: replace
+    "lukas-reineke/headlines.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    ft = "markdown",
+    lazy = true,
+    config = function()
+      require("config.plugin.headlines")
+    end,
+  },
 
   -- Filer
   -- {
@@ -195,7 +208,6 @@ local plugins = {
   {
     -- https://github.com/klen/nvim-config-local
     "klen/nvim-config-local",
-    event = "BufEnter",
     config = function()
       require("config.plugin.config-local")
     end,
