@@ -17,12 +17,16 @@ local options = {
 
   cmdheight      = 1,     -- Number of screen lines to use for the command-line
 
-  hlsearch       = true,  -- When there is a previous search pattern, highlight all its matches
-  showmatch      = true,  -- When a bracket is inserted, briefly jump to the matching one
+  ignorecase     = true,  -- 検索で ignorecase を設定
+  smartcase      = true,  -- 検索で smartcase を設定
+  incsearch      = true,  -- インクリメンタル検索
+  hlsearch       = true,  -- 検索時のハイライト
 
-  -- showmode = false, -- we don't need show mode because we see in the lualine statusline (Insert, Visual, etc)
+  showmatch      = true,  -- 対応する括弧をハイライト
 
   termguicolors  = true, -- 24-bit RGBを利用する
+
+  nrformats      = "octal", -- 
 
   mouse          = "a",  -- mouse support for all modes
 }
@@ -40,6 +44,7 @@ vim.api.nvim_set_var("maplocalleader", ",")
 -------------------------------
 -- keymaps
 local function keymap(mode, lhs, rhs, opts)
+  -- common options
   local options = {
     noremap = true,
     silent = true,
@@ -52,13 +57,26 @@ local function keymap(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+keymap("n", "ZZ", "<Nop>", {})
+keymap("n", "ZQ", "<Nop>", {})
+keymap("n", "Q", "<Nop>", {})
+
 keymap("n", "j", "gj", {})
 keymap("n", "k", "gk", {})
+keymap("n", "gj", "j", {})
+keymap("n", "gk", "k", {})
+keymap("v", "j", "gj", {})
+keymap("v", "k", "gk", {})
+keymap("v", "gj", "j", {})
+keymap("v", "gk", "k", {})
 
--- stay in indent mode
+keymap("n", "J", ":tabp<CR>", {})
+keymap("n", "K", ":tabn<CR>", {})
+keymap("n", "gJ", ":tabmove -1<CR>", {})
+keymap("n", "gK", ":tabmove +1<CR>", {})
+
 keymap("v", "<", "<gv", {})
 keymap("v", ">", ">gv", {})
 
--- buffer operations
-keymap("n", "<S-k>", ":tabn<CR>", {})
-keymap("n", "<S-j>", ":tabp<CR>", {})
+keymap("n", "Y", "y$", {})
+

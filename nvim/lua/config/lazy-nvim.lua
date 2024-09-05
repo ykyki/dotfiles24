@@ -16,7 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+-- vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 local plugins = {
   -- Lua Util
@@ -65,37 +65,45 @@ local plugins = {
   --   end,
   -- },
 
-  -- Startup screen
+  {
+    -- Status Line
+    -- https://github.com/nvim-lualine/lualine.nvim
+    "nvim-lualine/lualine.nvim",
+    event = "BufEnter",
+    config = function()
+      require("config.plugin.lualine")
+    end,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    }
+  },
+  {
+    -- Tab Line
+    -- https://github.com/romgrk/barbar.nvim
+    'romgrk/barbar.nvim',
+    version = '^1.0.0',              -- optional: only update when a new 1.x version is released
+    dependencies = {
+      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    event = "BufEnter",
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+  },
   -- {
-  --   "goolord/alpha-nvim",
-  --   event = "BufEnter",
-  --   config = function()
-  --     require("config.plugin.alpha-nvim")
-  --   end,
-  -- },
-
-  -- Status Line
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     require("config.plugin.lualine")
-  --   end,
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --   }
-  -- },
-
-  -- Buffer Line
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "VimEnter",
-  --   enabled = function()
-  --     return not vim.g.vscode
-  --   end,
-  --   config = function()
-  --     require("config.plugin.bufferline")
-  --   end,
+  --   -- Extensible UI for Neovim notifications and LSP progress messages.
+  --   -- https://github.com/j-hui/fidget.nvim
+  --   "j-hui/fidget.nvim",
+  --   opts = {
+  --     -- options
+  --   },
   -- },
 
   -- Telescope
@@ -220,7 +228,7 @@ local plugins = {
   -- {
   --   -- https://github.com/elentok/format-on-save.nvim
   --   "elentok/format-on-save.nvim",
-  --   event = "VimEnter",
+  --   event = "BufEnter",
   --   config = function()
   --     require("config.plugin.format-on-save")
   --   end,

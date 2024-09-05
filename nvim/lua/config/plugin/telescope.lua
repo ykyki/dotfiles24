@@ -1,16 +1,7 @@
-local telescope = require("telescope")
 local action = require('telescope.actions')
 
 local opt = {
   defaults = {
-    mappings = {
-      i = {
-        ["<cr>"] = action.select_tab_drop
-      },
-      n = {
-        ["<cr>"] = action.select_tab_drop
-      },
-    },
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -42,12 +33,9 @@ local opt = {
     border = {},
     borderchars = {
       { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-      -- prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-      -- results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-      -- preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-      prompt = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
+      prompt  = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
       results = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
-      preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
+      -- preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
     },
     file_ignore_patterns = { "node_modules/*", ".git" },
     path_display = { "truncate" },
@@ -56,8 +44,27 @@ local opt = {
   },
   pickers = {
     find_files = {
+      mappings = {
+        i = {
+          ["<cr>"] = action.select_tab_drop
+        },
+        n = {
+          ["<cr>"] = action.select_tab_drop
+        },
+      },
       hidden = true,
     },
+    grepping = {
+      mappings = {
+        i = {
+          ["<cr>"] = action.select_tab_drop
+        },
+        n = {
+          ["<cr>"] = action.select_tab_drop
+        },
+      },
+      hidden = true,
+    }
   },
   extensions = {
     frecency = {
@@ -72,6 +79,7 @@ local opt = {
   },
 }
 
+local telescope = require("telescope")
 telescope.setup(opt)
 
 local builtin = require('telescope.builtin')
