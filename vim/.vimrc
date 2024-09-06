@@ -78,13 +78,11 @@ vnoremap j  gj
 vnoremap k  gk
 vnoremap gj j
 vnoremap gk k
-" nnoremap <silent> J  :bp<CR>
-" nnoremap <silent> K  :bn<CR>
-nnoremap <silent> bp :bp<CR>
-nnoremap <silent> bn :bn<CR>
+nnoremap <silent> J  :bp<CR>
+nnoremap <silent> K  :bn<CR>
 nnoremap <silent> X  :bd<CR>
-nnoremap <silent> J  :tabp<CR>
-nnoremap <silent> K  :tabn<CR>
+" nnoremap <silent> J  :tabp<CR>
+" nnoremap <silent> K  :tabn<CR>
 " nnoremap <silent> X  :tabc<CR>
 nnoremap <silent> gJ :tabmove -1<CR>
 nnoremap <silent> gK :tabmove +1<CR>
@@ -130,6 +128,9 @@ call plug#begin()
 
     " https://github.com/michaeljsmith/vim-indent-object
     Plug 'michaeljsmith/vim-indent-object'
+
+    " https://github.com/ap/vim-buftabline
+    Plug 'ap/vim-buftabline'
 
     " https://github.com/junegunn/fzf.vim
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -220,10 +221,10 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
     \ 'PrtHistory(-1)':       ['<c-k>'],
     \ 'PrtHistory(1)':        ['<c-j>'],
-    \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
     \ 'AcceptSelection("h")': ['<c-h>'],
     \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'AcceptSelection("t")': ['<c-t>'],
     \ 'ToggleFocus()':        ['<s-tab>'],
     \ 'ToggleRegex()':        ['<c-s>'],
     \ 'ToggleByFname()':      ['<c-d>'],

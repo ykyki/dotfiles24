@@ -44,25 +44,9 @@ local opt = {
   },
   pickers = {
     find_files = {
-      mappings = {
-        i = {
-          ["<cr>"] = action.select_tab_drop
-        },
-        n = {
-          ["<cr>"] = action.select_tab_drop
-        },
-      },
       hidden = true,
     },
     grepping = {
-      mappings = {
-        i = {
-          ["<cr>"] = action.select_tab_drop
-        },
-        n = {
-          ["<cr>"] = action.select_tab_drop
-        },
-      },
       hidden = true,
     }
   },
