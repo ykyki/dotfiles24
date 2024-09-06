@@ -85,26 +85,20 @@ local plugins = {
       "nvim-tree/nvim-web-devicons",
     }
   },
-  {
-    -- Tab Line
-    -- https://github.com/romgrk/barbar.nvim
-    'romgrk/barbar.nvim',
-    version = '^1.0.0',              -- optional: only update when a new 1.x version is released
-    dependencies = {
-      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    },
-    event = "BufEnter",
-    init = function()
-      vim.g.barbar_auto_setup = false
-    end,
-    opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
-      -- insert_at_start = true,
-      -- …etc.
-    },
-  },
+  -- {
+  --   -- Tab Line
+  --   -- https://github.com/romgrk/barbar.nvim
+  --   'romgrk/barbar.nvim',
+  --   version = '^1.0.0',              -- optional: only update when a new 1.x version is released
+  --   dependencies = {
+  --     'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+  --     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  --   },
+  --   event = "BufEnter",
+  --   config = function()
+  --     require("config.plugin.barbar")
+  --   end,
+  -- },
   -- {
   --   -- Extensible UI for Neovim notifications and LSP progress messages.
   --   -- https://github.com/j-hui/fidget.nvim
