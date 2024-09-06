@@ -55,6 +55,14 @@ local plugins = {
     "michaeljsmith/vim-indent-object",
     event = "VeryLazy",
   },
+  {
+    -- https://github.com/junegunn/vim-easy-align
+    "https://github.com/junegunn/vim-easy-align",
+    event = "BufEnter",
+    keys = {
+      { "<cr>", "<Plug>(EasyAlign)", mode = "v", }
+    }
+  },
 
   -- Easymotion
   -- {
