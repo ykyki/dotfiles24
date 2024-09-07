@@ -1,6 +1,6 @@
 local action = require('telescope.actions')
 
-local opt = {
+local opts = {
   defaults = {
     vimgrep_arguments = {
       "rg",
@@ -52,22 +52,21 @@ local opt = {
   },
   extensions = {
     frecency = {
-      db_root = vim.fn.stdpath("state"),
       ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
+      default_workspace = "CWD",
       show_scores = false,
-      show_unindexed = true,
       disable_devicons = false,
-      db_safe_mode = false,
-      auto_validate = true,
+      path_display = { "filename_first" },
     },
   },
 }
 
 local telescope = require("telescope")
-telescope.setup(opt)
+telescope.setup(opts)
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<c-p>', builtin.find_files, {})
 vim.keymap.set('n', '<localleader>p', builtin.live_grep, {})
 vim.keymap.set('n', '<localleader>b', builtin.buffers, {})
 vim.keymap.set('n', '<localleader>h', builtin.help_tags, {})
+vim.keymap.set('n', '<localleader>e', ":Telescope frecency<CR>", {})

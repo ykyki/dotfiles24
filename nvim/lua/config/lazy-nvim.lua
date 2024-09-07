@@ -108,8 +108,8 @@ local plugins = {
   --   },
   -- },
 
-  -- Telescope
   {
+    -- https://github.com/nvim-telescope/telescope.nvim
     "nvim-telescope/telescope.nvim",
     event = { "VimEnter" },
     config = function()
@@ -117,15 +117,19 @@ local plugins = {
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
+      "nvim-tree/nvim-web-devicons",     -- optional
+      "nvim-treesitter/nvim-treesitter", -- optional
     }
   },
   {
+    -- https://github.com/nvim-telescope/telescope-frecency.nvim
     "nvim-telescope/telescope-frecency.nvim",
     config = function()
-      require("telescope").load_extension("frecency")
+      require("telescope").load_extension "frecency"
     end,
-    dependencies = { "kkharji/sqlite.lua" }
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    }
   },
 
   -- Tree-sitter
