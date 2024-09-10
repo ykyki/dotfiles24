@@ -7,7 +7,7 @@ local options = {
 
   number         = true,  -- 行番号の表示
   relativenumber = false, -- 相対行番号にするか否か
-  cursorline     = true,  -- カーソル行のハイライト
+  cursorline     = false,  -- カーソル行のハイライト
 
   tabstop        = 2,     -- Number of spaces that a <Tab> in the file counts for
   shiftwidth     = 2,     -- Number of spaces to use for each step of (auto)indent
