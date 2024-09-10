@@ -1,6 +1,6 @@
 vim.cmd [[highlight Headline1 guibg=#201010 guifg=#ffa0a0 gui=bold]]
-vim.cmd [[highlight Headline2 guibg=#102010 guifg=#a0f0a0 gui=bold]]
-vim.cmd [[highlight Headline3 guibg=#101020 guifg=#a0a0ff gui=bold]]
+vim.cmd [[highlight Headline2               guifg=#a0f0a0 gui=bold]]
+vim.cmd [[highlight Headline3               guifg=#a0a0ff gui=bold]]
 vim.cmd [[highlight Headline4               guifg=#c0a0a0 gui=bold]]
 -- vim.cmd [[highlight CodeBlock guibg=#1c1c1c]]
 -- vim.cmd [[highlight Dash guibg=#D19A66 gui=bold]]
