@@ -8,13 +8,16 @@
 export EDITOR="vim"
 
 # fzf
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # With bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # lsd
 # alias lsd="lsd --date '+%Y-%m-%d_%H:%M:%S'"
+
+# Kubernetes
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 ## go
 # export GOPATH="$HOME/go"
