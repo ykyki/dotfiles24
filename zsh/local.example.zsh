@@ -17,6 +17,7 @@ export EDITOR="vim"
 # alias lsd="lsd --date '+%Y-%m-%d_%H:%M:%S'"
 
 # Kubernetes
+alias k=kubectl
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 ## go
