@@ -47,7 +47,7 @@ function my_set_prompt() {
     RPROMPT+='[%?]'
     if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
         RPROMPT+="%{$fg[yellow]%}"
-        RPROMPT+='@'
+        # RPROMPT+='@'
         RPROMPT+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}  # escape %
         RPROMPT+="%{$reset_color%}"
         RPROMPT+='|'
