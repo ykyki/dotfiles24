@@ -74,6 +74,7 @@ keymap("n", "J", ":bp<cr>", {})
 keymap("n", "K", ":bn<cr>", {})
 -- keymap("n", "gJ", ":tabmove -1<CR>", {})
 -- keymap("n", "gK", ":tabmove +1<CR>", {})
+keymap("n", "X", ":bd<cr>", {})
 
 keymap("v", "<", "<gv", {})
 keymap("v", ">", ">gv", {})
