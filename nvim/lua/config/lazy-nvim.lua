@@ -19,8 +19,8 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 local plugins = {
-  -- Lua Util
   {
+    -- Lua Util
     -- https://github.com/nvim-lua/plenary.nvim
     "nvim-lua/plenary.nvim"
   },
@@ -99,15 +99,6 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   -- Extensible UI for Neovim notifications and LSP progress messages.
-  --   -- https://github.com/j-hui/fidget.nvim
-  --   "j-hui/fidget.nvim",
-  --   opts = {
-  --     -- options
-  --   },
-  -- },
-
   {
     -- https://github.com/nvim-telescope/telescope.nvim
     "nvim-telescope/telescope.nvim",
@@ -132,8 +123,8 @@ local plugins = {
     }
   },
 
-  -- Tree-sitter
   {
+    -- Tree-sitter
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost" },
     build = ":TSUpdateSync",
@@ -176,8 +167,6 @@ local plugins = {
   --   }
   -- },
 
-
-  -- Git Integration
   {
     -- https://github.com/lewis6991/gitsigns.nvim
     "lewis6991/gitsigns.nvim",
