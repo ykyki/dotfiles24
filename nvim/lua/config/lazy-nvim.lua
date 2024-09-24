@@ -152,20 +152,19 @@ local plugins = {
     end,
   },
 
-  -- Filer
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   event = "VimEnter",
-  --   branch = "main",
-  --   config = function()
-  --     require("config.plugin.neo-tree")
-  --   end,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-tree/nvim-web-devicons",
-  --     "MunifTanjim/nui.nvim",
-  --   }
-  -- },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    event = "VimEnter",
+    branch = "main",
+    config = function()
+      require("config.plugin.neo-tree")
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  },
 
   {
     -- https://github.com/lewis6991/gitsigns.nvim

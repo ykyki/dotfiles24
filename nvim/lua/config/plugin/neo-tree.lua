@@ -10,14 +10,13 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSi
 vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 
 neo_tree.setup({
-  close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = false,
   popup_border_style = "rounded",
   enable_git_status = true,
   enable_diagnostics = true,
-  enable_normal_mode_for_inputs = false,                             -- Enable normal mode for input dialogs.
-  open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
-  sort_case_insensitive = false,                                     -- used when sorting files and directories in the tree
-  sort_function = nil,                                               -- use a custom function for sorting files and directories in the tree
+  open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
+  sort_case_insensitive = false,
+  sort_function = nil,
   -- sort_function = function (a,b)
   --       if a.type == b.type then
   --           return a.path > b.path
@@ -47,8 +46,6 @@ neo_tree.setup({
       folder_closed = "",
       folder_open = "",
       folder_empty = "󰜌",
-      -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-      -- then these will never be used.
       default = "*",
       highlight = "NeoTreeFileIcon",
     },
@@ -172,12 +169,7 @@ neo_tree.setup({
     },
     group_empty_dirs = false,               -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-    -- in whatever position is specified in window.position
-    -- "open_current",  -- netrw disabled, opening a directory opens within the
-    -- window like netrw would, regardless of window.position
-    -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-    use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
-    -- instead of relying on nvim autocmd events.
+    use_libuv_file_watcher = false,         -- This will use the OS level file watchers to detect changes
     window = {
       mappings = {
         ["<bs>"] = "navigate_up",
@@ -218,20 +210,20 @@ neo_tree.setup({
       },
     },
   },
-  git_status = {
-    window = {
-      position = "float",
-      mappings = {
-        ["A"] = "git_add_all",
-        ["gu"] = "git_unstage_file",
-        ["ga"] = "git_add_file",
-        ["gr"] = "git_revert_file",
-        ["gc"] = "git_commit",
-        ["gp"] = "git_push",
-        ["gg"] = "git_commit_and_push",
-      },
-    },
-  },
+  -- git_status = {
+  --   window = {
+  --     position = "float",
+  --     mappings = {
+  --       ["A"] = "git_add_all",
+  --       ["gu"] = "git_unstage_file",
+  --       ["ga"] = "git_add_file",
+  --       ["gr"] = "git_revert_file",
+  --       ["gc"] = "git_commit",
+  --       ["gp"] = "git_push",
+  --       ["gg"] = "git_commit_and_push",
+  --     },
+  --   },
+  -- },
 })
 
 vim.api.nvim_set_keymap(
