@@ -241,6 +241,24 @@ local plugins = {
   --   end,
   -- },
 
+  -- Completion Engine
+  {
+    "hrsh7th/nvim-cmp",
+    event = "BufEnter",
+    config = function()
+      require("config.plugin.completion")
+    end,
+
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
+  },
+
   -- Markdown
   {
     "plasticboy/vim-markdown",
