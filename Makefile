@@ -54,6 +54,12 @@ tig:
 idea:
 	test -L ${HOME}/.ideavimrc || ln -sv ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
 
+.PHONY: alacritty
+ALACRITTY_PATH := ${HOME}/.config/alacritty/alacritty.toml
+alacritty:
+	mkdir -p ${HOME}/.config/alacritty
+	test -L ${ALACRITTY_PATH} || ln -sv ${PWD}/alacritty/alacritty.toml ${ALACRITTY_PATH}
+
 .PHONY: container-local container-remote
 USER_NAME := ykyki
 IMAGE_NAME := d24-ubuntu

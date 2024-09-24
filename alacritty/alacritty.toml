@@ -1,0 +1,27 @@
+[window]
+decorations = "buttonless"
+
+[window.padding]
+x = 5
+y = 5
+
+# [shell]
+# args = ["-c", "/usr/local/bin/tmux"]
+# program = "/bin/zsh"
+#
+# [font.bold]
+# family = "Hack Nerd Font Mono"
+# style = "Bold"
+#
+# [font.bold_italic]
+# family = "Hack Nerd Font Mono"
+# style = "Bold Italic"
+#
+# [font.italic]
+# family = "Hack Nerd Font Mono"
+# style = "Italic"
+#
+# [font.normal]
+# family = "Hack Nerd Font Mono"
+# style = "Regular"
+
