@@ -202,6 +202,7 @@ local plugins = {
   {
     -- https://github.com/klen/nvim-config-local
     "klen/nvim-config-local",
+    event = "VimEnter",
     config = function()
       require("config.plugin.config-local")
     end,
