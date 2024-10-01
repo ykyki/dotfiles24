@@ -37,7 +37,7 @@ local opts = {
       results = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
       -- preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
     },
-    file_ignore_patterns = { "node_modules/*", ".git" },
+    file_ignore_patterns = { "node_modules/", ".git/" },
     path_display = { "truncate" },
     dynamic_preview_title = true,
     color_devicons = true,
