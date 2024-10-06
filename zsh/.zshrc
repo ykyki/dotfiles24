@@ -97,6 +97,7 @@ zshaddhistory() {
         && ${cmd}  != (l[sal]|lla)
     ]]
 }
+setopt HIST_IGNORE_SPACE  # スペースで始まるコマンドを無視
 
 # Zsh
 # REPORTTIME=1 # 1秒以上かかった処理はtimeする
