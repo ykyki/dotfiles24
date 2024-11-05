@@ -81,13 +81,14 @@ setopt pushd_ignore_dups
 export HISTFILE=$HOME/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=100000
-setopt hist_reduce_blanks
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE # スペースで始まるコマンドを無視
 zshaddhistory() {
     local line=${1%%$'\n'}
     local cmd=${line%% *}
     # 以下の条件をすべて満たすものだけをヒストリに追加する
     [[ ${#line} -ge 4 # 5文字以上
-        && ${line} != (nvim|nvims)
+        && ${line} != nvim
         && ${line} != tig
         && ${line} != tmux
         && ${cmd}  != pwd
@@ -97,7 +98,6 @@ zshaddhistory() {
         && ${cmd}  != (l[sal]|lla)
     ]]
 }
-setopt HIST_IGNORE_SPACE  # スペースで始まるコマンドを無視
 
 # Zsh
 # REPORTTIME=1 # 1秒以上かかった処理はtimeする
@@ -111,7 +111,7 @@ alias ls="ls -FG"
 alias ll="ls -l"
 alias la="ls -A"
 alias lla="ls -lA"
-alias sudo='sudo env PATH=$PATH' # sudo with PATH
+# alias sudo='sudo env PATH=$PATH' # sudo with PATH
 # alias -g @less=" | less -iNRS" # read it at less
 
 # ---------------------------------------------------------------
