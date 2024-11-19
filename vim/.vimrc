@@ -193,7 +193,7 @@ let g:AutoPairsMapBS   = 1
 let g:AutoPairsMapCh   = 1
 
 " ----- google/vim-searchindex
-let g:searchindex_line_limit = 100000
+let g:searchindex_line_limit = 1000000
 
 " ----- junegunn/vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
