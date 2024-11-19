@@ -83,11 +83,13 @@ export HISTSIZE=10000
 export SAVEHIST=100000
 setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE # スペースで始まるコマンドを無視
+setopt HIST_IGNORE_ALL_DUPS
 zshaddhistory() {
     local line=${1%%$'\n'}
     local cmd=${line%% *}
     # 以下の条件をすべて満たすものだけをヒストリに追加する
     [[ ${#line} -ge 4 # 5文字以上
+        && ${line} != vim
         && ${line} != nvim
         && ${line} != tig
         && ${line} != tmux
