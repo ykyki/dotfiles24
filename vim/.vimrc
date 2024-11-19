@@ -150,6 +150,9 @@ call plug#begin()
     " https://github.com/michaeljsmith/vim-indent-object
     Plug 'michaeljsmith/vim-indent-object'
 
+    " https://github.com/google/vim-searchindex
+    Plug 'google/vim-searchindex'
+
     " https://github.com/junegunn/vim-easy-align
     Plug 'junegunn/vim-easy-align'
 
@@ -188,6 +191,9 @@ call plug#end()
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsMapBS   = 1
 let g:AutoPairsMapCh   = 1
+
+" ----- google/vim-searchindex
+let g:searchindex_line_limit = 100000
 
 " ----- junegunn/vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
