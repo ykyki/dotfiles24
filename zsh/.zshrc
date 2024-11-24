@@ -35,6 +35,8 @@ autoload -U promptinit && promptinit
 setopt prompt_subst
 ### romkatv/gitstatus: https://github.com/romkatv/gitstatus
 function my_set_prompt() {
+    # color: black, red, green, yellow, blue, magenta, cyan, white
+    # see: man zshzle
     PROMPT=''
     PROMPT+="%{$fg[green]%}%n%{$reset_color%}"
     PROMPT+='@'
