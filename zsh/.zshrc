@@ -95,19 +95,16 @@ zshaddhistory() {
         && ${line} != nvim
         && ${line} != tig
         && ${line} != tmux
+        && ${line} != (l[sal]|lla)
         && ${cmd}  != pwd
         && ${cmd}  != fg
         && ${cmd}  != tldr
         && ${cmd}  != history
-        && ${cmd}  != (l[sal]|lla)
     ]]
 }
 
 # Zsh
 # REPORTTIME=1 # 1秒以上かかった処理はtimeする
-
-# Path
-export PATH=$HOME/.bin:$PATH
 
 # Alias
 alias grep="grep --color=auto"
