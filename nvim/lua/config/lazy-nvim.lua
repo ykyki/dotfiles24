@@ -232,14 +232,14 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   -- https://github.com/elentok/format-on-save.nvim
-  --   "elentok/format-on-save.nvim",
-  --   event = "BufEnter",
-  --   config = function()
-  --     require("config.plugin.format-on-save")
-  --   end,
-  -- },
+  {
+    -- https://github.com/elentok/format-on-save.nvim
+    "elentok/format-on-save.nvim",
+    event = "BufEnter",
+    config = function()
+      require("config.plugin.format-on-save")
+    end,
+  },
 
   -- Completion Engine
   {
