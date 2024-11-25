@@ -133,10 +133,10 @@ command! Memo call s:toggle_memo()
 " --- Plugins
 " vim-plug https://github.com/junegunn/vim-plug
 " Usage:
-"   :PlugInstall to install the plugins
-"   :PlugUpdate to install or update the plugins
-"   :PlugDiff to review the changes from the last update
-"   :PlugClean to remove plugins no longer in the list
+"   :PlugInstall
+"   :PlugUpdate
+"   :PlugDiff
+"   :PlugClean
 call plug#begin()
     " https://github.com/tpope/vim-commentary
     Plug 'tpope/vim-commentary'
@@ -149,6 +149,9 @@ call plug#begin()
 
     " https://github.com/michaeljsmith/vim-indent-object
     Plug 'michaeljsmith/vim-indent-object'
+
+    " https://github.com/junegunn/vim-peekaboo
+    Plug 'junegunn/vim-peekaboo'
 
     " https://github.com/google/vim-searchindex
     Plug 'google/vim-searchindex'
@@ -192,6 +195,13 @@ let g:AutoPairsFlyMode = 0
 let g:AutoPairsMapBS   = 1
 let g:AutoPairsMapCh   = 1
 
+" ----- /junegunn/vim-peekaboo
+let g:peekaboo_window     = 'vert bo 30new'
+let g:peekaboo_delay      = 0
+let g:peekaboo_compact    = 0
+let g:peekaboo_prefix     = ''
+let g:peekaboo_ins_prefix = ''
+
 " ----- google/vim-searchindex
 let g:searchindex_line_limit = 1000000
 
@@ -234,6 +244,10 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar', 'unite']
 let g:rainbow_active = 1
 
 " ----- ctrlp.vim
+" Usage:
+"   :Rg
+"   :Colors
+"   :Files
 let g:ctrlp_map                 = '<c-p>'
 let g:ctrlp_cmd                 = 'CtrlP'
 let g:ctrlp_show_hidden         = 1
