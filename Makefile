@@ -8,14 +8,20 @@ help:
 	@echo "  help          Show this help message"
 	@echo "  ...           (TODO)"
 
+LN := ln -sv
+CP := cp -v
+
+XDG_CONFIG_HOME := ${HOME}/.config
+ZDOTDIR         := ${XDG_CONFIG_HOME}/zsh
+
 .PHONY: zsh
-ZSHMY_PATH=${HOME}/.zshmy
 zsh:
-	test -L ${HOME}/.zshrc || ln -sv ${PWD}/zsh/.zshrc ${HOME}/.zshrc
-	test -f ${HOME}/.zlogout || cp ${PWD}/zsh/.zlogout.example ${HOME}/.zlogout
-	test -d ${ZSHMY_PATH} || mkdir -p ${ZSHMY_PATH}
-	test -L ${ZSHMY_PATH}/common.zsh || ln -sv ${PWD}/zsh/common.zsh ${ZSHMY_PATH}/common.zsh
-	test -f ${ZSHMY_PATH}/local.zsh || cp ${PWD}/zsh/local.example.zsh ${ZSHMY_PATH}/local.zsh
+	mkdir -p ${ZDOTDIR}
+	test -L ${HOME}/.zshenv       || $(LN) ${PWD}/zsh/.zshenv           ${HOME}/.zshenv
+	test -L ${ZDOTDIR}/.zshrc     || $(LN) ${PWD}/zsh/.zshrc            ${ZDOTDIR}/.zshrc
+	test -f ${ZDOTDIR}/.zlogout   || $(CP) ${PWD}/zsh/.zlogout.example  ${ZDOTDIR}/.zlogout
+	test -L ${ZDOTDIR}/common.zsh || $(LN) ${PWD}/zsh/common.zsh        ${ZDOTDIR}/common.zsh
+	test -f ${ZDOTDIR}/local.zsh  || $(CP) ${PWD}/zsh/local.example.zsh ${ZDOTDIR}/local.zsh
 
 .PHONY: git
 git:

@@ -86,7 +86,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # History
-export HISTFILE=$HOME/.zhistory
+export HISTFILE=$ZDOTDIR/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=100000
 setopt HIST_REDUCE_BLANKS
@@ -113,8 +113,8 @@ zshaddhistory() {
 export EDITOR='vim'
 
 # Path
-export GOPATH="$HOME/go"
-CARGO_PATH="$HOME/.cargo"
+typeset -gU PATH path
+typeset -gU FPATH fpath
 path=(
     '/usr/local/bin'(N-/)
     '/usr/bin'(N-/)
@@ -125,7 +125,7 @@ path=(
     "$GOPATH/bin"(N-/)
     "$CARGO_PATH/bin"(N-/)
     "/usr/local/opt/llvm/bin"(N-/)
-    # "$path[@]"
+    "$path[@]"
 )
 
 # Alias
@@ -138,8 +138,6 @@ alias lla="ls -lA"
 # alias -g @less=" | less -iNRS" # read it at less
 
 # Others
-ZSHMY_PATH=$HOME/.zshmy
-source $ZSHMY_PATH/common.zsh
-source $ZSHMY_PATH/local.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+source $ZDOTDIR/common.zsh
+source $ZDOTDIR/local.zsh
+[ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
