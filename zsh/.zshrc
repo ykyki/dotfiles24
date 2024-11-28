@@ -109,8 +109,24 @@ zshaddhistory() {
     ]]
 }
 
-# Zsh
-# REPORTTIME=1 # 1秒以上かかった処理はtimeする
+# Env
+export EDITOR='vim'
+
+# Path
+export GOPATH="$HOME/go"
+CARGO_PATH="$HOME/.cargo"
+path=(
+    '/usr/local/bin'(N-/)
+    '/usr/bin'(N-/)
+    '/bin'(N-/)
+    '/usr/local/sbin'(N-/)
+    '/usr/sbin'(N-/)
+    '/sbin'(N-/)
+    "$GOPATH/bin"(N-/)
+    "$CARGO_PATH/bin"(N-/)
+    "/usr/local/opt/llvm/bin"(N-/)
+    # "$path[@]"
+)
 
 # Alias
 alias grep="grep --color=auto"
@@ -121,7 +137,9 @@ alias lla="ls -lA"
 # alias sudo='sudo env PATH=$PATH' # sudo with PATH
 # alias -g @less=" | less -iNRS" # read it at less
 
-# ---------------------------------------------------------------
+# Others
 ZSHMY_PATH=$HOME/.zshmy
 source $ZSHMY_PATH/common.zsh
 source $ZSHMY_PATH/local.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

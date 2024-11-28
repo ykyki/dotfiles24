@@ -3,12 +3,8 @@
 #     tmux
 # fi
 
-# export PATH="/usr/local/sbin:$PATH"
-
-export EDITOR="vim"
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# GPG
+# export GPG_TTY=$TTY
 
 # With bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -17,15 +13,8 @@ export EDITOR="vim"
 # alias lsd="lsd --date '+%Y-%m-%d_%H:%M:%S'"
 
 # Kubernetes
-alias k=kubectl
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-
-## go
-# export GOPATH="$HOME/go"
-# export PATH="$PATH:$GOPATH/bin"
-
-# Rust
-# source $HOME/.cargo/env
+# alias k=kubectl
+# [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # ---------------------------------------------------------------
 # commands
