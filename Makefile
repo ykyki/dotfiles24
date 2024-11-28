@@ -30,9 +30,12 @@ git:
 	test -L ${GIT_CONFIG_DIR}/config || $(LN) ${PWD}/git/.gitconfig        ${GIT_CONFIG_DIR}/config
 	test -L ${GIT_CONFIG_DIR}/ignore || $(LN) ${PWD}/git/.gitignore_global ${GIT_CONFIG_DIR}/ignore
 
+TMUX_CONFIG_DIR := ${XDG_CONFIG_HOME}/tmux
 .PHONY: tmux
 tmux:
-	test -L ${HOME}/.tmux.conf || ln -sv ${PWD}/tmux/.tmux.conf ${HOME}/.tmux.conf
+	mkdir -p ${TMUX_CONFIG_DIR}
+	test -L ${TMUX_CONFIG_DIR}/tmux.conf  || ${LN} ${PWD}/tmux/tmux.conf          ${TMUX_CONFIG_DIR}/tmux.conf
+	test -f ${TMUX_CONFIG_DIR}/local.conf || ${CP} ${PWD}/tmux/local.example.conf ${TMUX_CONFIG_DIR}/local.conf
 
 .PHONY: vim
 vim:
