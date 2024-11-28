@@ -20,11 +20,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
-## Plugins
-# zinit light zsh-users/zsh-autosuggestions
-# zinit light zdharma-continuum/fast-syntax-highlighting
-# zinit light asdf-vm/asdf
-
+### Plugins ###
 zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-autosuggestions' \
     @'zsh-users/zsh-completions' \
@@ -32,10 +28,10 @@ zinit wait lucid blockf light-mode for \
     @'asdf-vm/asdf'
 zinit ice depth=1; zinit light romkatv/gitstatus
 
-## Completion
+### Completion ###
 zstyle ':completion:*' menu select
 
-## Prompt
+### Prompt ###
 autoload -U colors && colors
 autoload -U promptinit && promptinit
 setopt prompt_subst
@@ -77,15 +73,19 @@ gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd my_set_prompt
 
-## Key Bind
-bindkey -d
-bindkey -e
+### General ###
+export EDITOR='vim'
 
-## cd
+### cd ###
 setopt auto_pushd
 setopt pushd_ignore_dups
 
-# History
+
+### Key Bind ###
+bindkey -d
+bindkey -e
+
+### History ###
 export HISTFILE=$ZDOTDIR/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=100000
@@ -109,10 +109,8 @@ zshaddhistory() {
     ]]
 }
 
-# Env
-export EDITOR='vim'
 
-# Path
+### Path ###
 typeset -gU PATH path
 typeset -gU FPATH fpath
 path=(
@@ -128,7 +126,7 @@ path=(
     "$path[@]"
 )
 
-# Alias
+### Alias ###
 alias grep="grep --color=auto"
 alias ls="ls -FG"
 alias ll="ls -l"
@@ -137,7 +135,8 @@ alias lla="ls -lA"
 # alias sudo='sudo env PATH=$PATH' # sudo with PATH
 # alias -g @less=" | less -iNRS" # read it at less
 
-# Others
+### Others ###
 source $ZDOTDIR/common.zsh
 source $ZDOTDIR/local.zsh
-[ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
