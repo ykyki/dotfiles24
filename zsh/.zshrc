@@ -21,10 +21,16 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 ## Plugins
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma-continuum/fast-syntax-highlighting
+# zinit light zsh-users/zsh-autosuggestions
+# zinit light zdharma-continuum/fast-syntax-highlighting
+# zinit light asdf-vm/asdf
+
+zinit wait lucid blockf light-mode for \
+    @'zsh-users/zsh-autosuggestions' \
+    @'zsh-users/zsh-completions' \
+    @'zdharma-continuum/fast-syntax-highlighting' \
+    @'asdf-vm/asdf'
 zinit ice depth=1; zinit light romkatv/gitstatus
-zinit light asdf-vm/asdf
 
 ## Completion
 zstyle ':completion:*' menu select
