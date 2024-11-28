@@ -23,11 +23,12 @@ zsh:
 	test -L ${ZDOTDIR}/common.zsh || $(LN) ${PWD}/zsh/common.zsh        ${ZDOTDIR}/common.zsh
 	test -f ${ZDOTDIR}/local.zsh  || $(CP) ${PWD}/zsh/local.example.zsh ${ZDOTDIR}/local.zsh
 
+GIT_CONFIG_DIR := ${XDG_CONFIG_HOME}/git
 .PHONY: git
 git:
-	test -L ${HOME}/.gitconfig || ln -sv ${PWD}/git/.gitconfig ${HOME}/.gitconfig
-	test -d ${HOME}/.config/git || mkdir -p ${HOME}/.config/git
-	test -L ${HOME}/.config/git/ignore || ln -sv ${PWD}/git/.gitignore_global ${HOME}/.config/git/ignore
+	mkdir -p ${GIT_CONFIG_DIR}
+	test -L ${GIT_CONFIG_DIR}/config || $(LN) ${PWD}/git/.gitconfig        ${GIT_CONFIG_DIR}/config
+	test -L ${GIT_CONFIG_DIR}/ignore || $(LN) ${PWD}/git/.gitignore_global ${GIT_CONFIG_DIR}/ignore
 
 .PHONY: tmux
 tmux:
