@@ -102,7 +102,6 @@ zshaddhistory() {
         && ${line} != tig
         && ${line} != tmux
         && ${line} != (l[sal]|lla)
-        && ${cmd}  != cd
         && ${cmd}  != pwd
         && ${cmd}  != fg
         && ${cmd}  != tldr
