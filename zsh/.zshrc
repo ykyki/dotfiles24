@@ -127,6 +127,7 @@ path=(
 )
 
 ### Alias ###
+export LSCOLORS=gxfxcxdxbxegedabagacad # for mac, see man ls
 alias grep="grep --color=auto"
 alias ls="ls -FG"
 alias ll="ls -l"
