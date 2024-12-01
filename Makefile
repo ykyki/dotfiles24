@@ -27,8 +27,10 @@ zsh:
 GIT_CONFIG_DIR := ${XDG_CONFIG_HOME}/git
 git:
 	mkdir -p ${GIT_CONFIG_DIR}
-	test -L ${GIT_CONFIG_DIR}/config || ${LN} ${PWD}/git/.gitconfig        ${GIT_CONFIG_DIR}/config
-	test -L ${GIT_CONFIG_DIR}/ignore || ${LN} ${PWD}/git/.gitignore_global ${GIT_CONFIG_DIR}/ignore
+	mkdir -p ${GIT_CONFIG_DIR}/conf.d
+	test -L ${GIT_CONFIG_DIR}/config || ${LN} ${PWD}/git/config ${GIT_CONFIG_DIR}/config
+	test -L ${GIT_CONFIG_DIR}/ignore || ${LN} ${PWD}/git/ignore ${GIT_CONFIG_DIR}/ignore
+	test -f ${GIT_CONFIG_DIR}/conf.d/local.conf || ${CP} ${PWD}/git/conf.d/local.conf ${GIT_CONFIG_DIR}/conf.d/local.conf
 
 .PHONY: tmux
 TMUX_CONFIG_DIR := ${XDG_CONFIG_HOME}/tmux
