@@ -140,4 +140,5 @@ alias lla="ls -lA"
 source $ZDOTDIR/common.zsh
 source $ZDOTDIR/local.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ $commands[fzf] ] &&  source <(fzf --zsh)
 
