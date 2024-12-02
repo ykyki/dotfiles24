@@ -120,10 +120,11 @@ path=(
     '/usr/local/sbin'(N-/)
     '/usr/sbin'(N-/)
     '/sbin'(N-/)
+    '/usr/local/opt/llvm/bin'(N-/)
+    '/opt/homebrew/opt/llvm/bin'(N-/)
     "$GOPATH/bin"(N-/)
     "$RUSTUP_HOME/bin"(N-/)
     "$CARGO_HOME/bin"(N-/)
-    "/usr/local/opt/llvm/bin"(N-/)
     "$path[@]"
 )
 
