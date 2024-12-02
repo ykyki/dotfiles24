@@ -24,8 +24,7 @@ zinit light-mode for \
 zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-autosuggestions' \
     @'zsh-users/zsh-completions' \
-    @'zdharma-continuum/fast-syntax-highlighting' \
-    @'asdf-vm/asdf'
+    @'zdharma-continuum/fast-syntax-highlighting'
 zinit ice depth=1; zinit light romkatv/gitstatus
 
 ### Completion ###
