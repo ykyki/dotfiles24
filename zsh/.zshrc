@@ -56,11 +56,11 @@ function my_set_prompt() {
         RPROMPT+='|'
         (( VCS_STATUS_COMMITS_BEHIND )) && RPROMPT+="%{$fg[blue]%}"    && RPROMPT+='⇣' && RPROMPT+=$VCS_STATUS_COMMITS_BEHIND && RPROMPT+="%{$reset_color%}"
         (( VCS_STATUS_COMMITS_AHEAD  )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='⇡' && RPROMPT+=$VCS_STATUS_COMMITS_AHEAD  && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_STAGED     )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='+' && RPROMPT+=$VCS_STATUS_NUM_STAGED    && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_UNSTAGED   )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='!' && RPROMPT+=$VCS_STATUS_NUM_UNSTAGED  && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED   && RPROMPT+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_STAGED     )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='+' && RPROMPT+=$VCS_STATUS_NUM_STAGED     && RPROMPT+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_UNSTAGED   )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='!' && RPROMPT+=$VCS_STATUS_NUM_UNSTAGED   && RPROMPT+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED  && RPROMPT+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS  && RPROMPT+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED    && RPROMPT+="%{$reset_color%}"
     else
         RPROMPT+="%{$fg[yellow]%}"
         RPROMPT+='%3d'
@@ -79,10 +79,10 @@ export EDITOR='vim'
 setopt auto_pushd
 setopt pushd_ignore_dups
 
-
 ### Key Bind ###
-bindkey -d
-bindkey -e
+bindkey -d # reset
+bindkey -e # emacs
+# bindkey -v # vim
 
 ### History ###
 export HISTFILE=$ZDOTDIR/.zhistory
