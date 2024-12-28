@@ -62,6 +62,12 @@ alacritty:
 	mkdir -p ${ALACRITTY_CONFIG_DIR}
 	test -L ${ALACRITTY_CONFIG_DIR}/alacritty.toml || ${LN} ${PWD}/alacritty/alacritty.toml ${ALACRITTY_CONFIG_DIR}/alacritty.toml
 
+.PHONY: ghostty
+GHOSTTY_CONFIG_DIR := ${XDG_CONFIG_HOME}/ghostty
+ghostty:
+	mkdir -p ${GHOSTTY_CONFIG_DIR}
+	test -L ${GHOSTTY_CONFIG_DIR}/config || ${LN} ${PWD}/ghostty/config ${GHOSTTY_CONFIG_DIR}/config
+
 .PHONY: nvim clean-nvim
 NVIM_APPNAME    := nvim
 NVIM_CONFIG_DIR := ${XDG_CONFIG_HOME}/${NVIM_APPNAME}
