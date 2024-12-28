@@ -124,6 +124,7 @@ path=(
     "$GOPATH/bin"(N-/)
     "$RUSTUP_HOME/bin"(N-/)
     "$CARGO_HOME/bin"(N-/)
+    '/usr/local/texlive/2024/bin/universal-darwin'(N-)
     "$path[@]"
 )
 
