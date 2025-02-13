@@ -6,12 +6,6 @@
 # GPG
 # export GPG_TTY=$TTY
 
-# fzf
-# [ $commands[fzf] ] &&  source <(fzf --zsh)
-
-# mise
-# [ $commands[mise] ] && eval "$(mise activate zsh)"
-
 # With bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
