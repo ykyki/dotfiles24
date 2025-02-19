@@ -114,13 +114,14 @@ typeset -gU PATH path
 typeset -gU FPATH fpath
 path=(
     '/usr/local/bin'(N-/)
+    '/opt/homebrew/bin'(N-/)
+    '/opt/homebrew/opt/llvm/bin'(N-/)
     '/usr/bin'(N-/)
     '/bin'(N-/)
     '/usr/local/sbin'(N-/)
     '/usr/sbin'(N-/)
     '/sbin'(N-/)
     '/usr/local/opt/llvm/bin'(N-/)
-    '/opt/homebrew/opt/llvm/bin'(N-/)
     "$GOPATH/bin"(N-/)
     "$RUSTUP_HOME/bin"(N-/)
     "$CARGO_HOME/bin"(N-/)
