@@ -39,11 +39,12 @@ function my_set_prompt() {
     # color: black, red, green, yellow, blue, magenta, cyan, white
     # see: man zshzle
     PROMPT=''
-    PROMPT+="%{$fg[green]%}%n%{$reset_color%}"
-    PROMPT+='@'
-    PROMPT+="%{$fg[white]%}%m"
-    PROMPT+=':'
-    PROMPT+="%{$fg[yellow]%}%1~%{$reset_color%}"
+    # PROMPT+="%{$fg[green]%}%n%{$reset_color%}"
+    # PROMPT+='@'
+    # PROMPT+="%{$fg[white]%}%m"
+    # PROMPT+=':'
+    # PROMPT+="%{$fg[yellow]%}%1~%{$reset_color%}"
+    PROMPT+="%{$fg[yellow]%}%2~%{$reset_color%}"
     PROMPT+='%#'
     PROMPT+=' '
     RPROMPT=''
@@ -62,10 +63,10 @@ function my_set_prompt() {
         (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS  && RPROMPT+="%{$reset_color%}"
         (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED    && RPROMPT+="%{$reset_color%}"
     else
-        RPROMPT+="%{$fg[yellow]%}"
-        RPROMPT+='%3d'
-        RPROMPT+="%{$reset_color%}"
+        # RPROMPT+="%{$fg[yellow]%}%3d%{$reset_color%}"
     fi
+    # RPROMPT+="%{$fg[blue]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
+    RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
     setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
 }
 gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
