@@ -22,6 +22,9 @@ zsh:
 	test -f ${ZDOTDIR}/.zlogout   || ${CP} ${PWD}/zsh/.zlogout.example  ${ZDOTDIR}/.zlogout
 	test -L ${ZDOTDIR}/common.zsh || ${LN} ${PWD}/zsh/common.zsh        ${ZDOTDIR}/common.zsh
 	test -f ${ZDOTDIR}/local.zsh  || ${CP} ${PWD}/zsh/local.example.zsh ${ZDOTDIR}/local.zsh
+	# Zeno.zsh
+	mkdir -p ${XDG_CONFIG_HOME}/zeno
+	test  -L ${XDG_CONFIG_HOME}/zeno/config.yaml || ${LN} ${PWD}/zsh/zeno/config.yml ${XDG_CONFIG_HOME}/zeno/config.yml
 
 .PHONY: git
 GIT_CONFIG_DIR := ${XDG_CONFIG_HOME}/git
