@@ -53,5 +53,3 @@ function passgen {
     LC_ALL=C < /dev/urandom tr -cd '0-9A-Za-z!@#$%^&*' | tr -d '0Oo1Il' | head -c $passlen
 }
 
-alias memo="vim -c Memo"
-

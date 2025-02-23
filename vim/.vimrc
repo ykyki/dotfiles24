@@ -101,32 +101,32 @@ vmap <Leader> [plugin]
 nnoremap [plugin]z :setlocal wrap!<CR>
 
 " ----- Quick Memo
-let s:memo_path = expand('~/.local/share/memo.md') " 保存先
-
-function! s:toggle_memo() abort
-    " 既に開いていた場合はメモを閉じる
-    if expand('%') ==# s:memo_path
-        write
-        bdelete
-        return
-    endif
-
-    execute 'edit' s:memo_path
-    setlocal bufhidden=wipe noswapfile
-    call append(line("$"), "--------------------------------" )
-    call append(line("$"), strftime("%Y-%m-%d %H:%M:%S"))
-    call append(line("$"), "")
-    call cursor(line("$"), 1) " カーソルをファイル末尾に移動
-
-    augroup MemoAuGroup
-      autocmd!
-      " 自動保存設定
-      autocmd InsertLeave,TextChanged,BufLeave <buffer> silent update
-    augroup END
-endfunction
-
+" let s:memo_path = expand('~/.local/share/memo.md') " 保存先
+"
+" function! s:toggle_memo() abort
+"     " 既に開いていた場合はメモを閉じる
+"     if expand('%') ==# s:memo_path
+"         write
+"         bdelete
+"         return
+"     endif
+"
+"     execute 'edit' s:memo_path
+"     setlocal bufhidden=wipe noswapfile
+"     call append(line("$"), "--------------------------------" )
+"     call append(line("$"), strftime("%Y-%m-%d %H:%M:%S"))
+"     call append(line("$"), "")
+"     call cursor(line("$"), 1) " カーソルをファイル末尾に移動
+"
+"     augroup MemoAuGroup
+"       autocmd!
+"       " 自動保存設定
+"       autocmd InsertLeave,TextChanged,BufLeave <buffer> silent update
+"     augroup END
+" endfunction
+"
 " コマンド
-command! Memo call s:toggle_memo()
+" command! Memo call s:toggle_memo()
 " マッピング
 " nnoremap mo <Cmd>Memo<CR>
 
