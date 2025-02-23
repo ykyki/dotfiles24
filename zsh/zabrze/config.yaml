@@ -1,0 +1,16 @@
+abbrevs:
+
+  - name: awk '{print $1}'
+    abbr: '.1'
+    snippet: awk '{print $1}'
+
+  - name: terraform
+    abbr: tf
+    snippet: terraform
+    if: (( ${+commands[terraform]} )) # available if terraform is installed
+
+  - name: kubectl
+    abbr: k
+    snippet: kubectl
+    if: (( ${+commands[kubectl]} ))
+

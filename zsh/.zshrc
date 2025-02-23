@@ -26,6 +26,9 @@ zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-completions' \
     @'zdharma-continuum/fast-syntax-highlighting'
 zinit ice depth=1; zinit light romkatv/gitstatus
+zinit wait lucid blockf light-mode as"program" from"gh-r" for \
+    atload'eval "$(zabrze init --bind-keys)"' \
+    Ryooooooga/zabrze
 
 ### Completion ###
 zstyle ':completion:*' menu select
