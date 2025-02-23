@@ -86,7 +86,7 @@ bindkey -e # emacs
 # bindkey -v # vim
 
 ### History ###
-export HISTFILE=$ZDOTDIR/.zhistory
+export HISTFILE=$XDG_STATE_HOME/zsh_history
 export HISTSIZE=10000
 export SAVEHIST=100000
 setopt HIST_REDUCE_BLANKS
