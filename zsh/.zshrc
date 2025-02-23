@@ -112,7 +112,6 @@ zshaddhistory() {
     ]]
 }
 
-
 ### Path ###
 typeset -gU PATH path
 typeset -gU FPATH fpath
@@ -144,8 +143,12 @@ alias lla="ls -lA"
 # alias -g @less=" | less -iNRS" # read it at less
 
 ### Others ###
-source $ZDOTDIR/common.zsh
-source $ZDOTDIR/local.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ $commands[mise] ] && eval "$(mise activate zsh)"
+zinit wait lucid light-mode as'null' \
+    atinit'
+        source "$ZDOTDIR/common.zsh"
+        source $ZDOTDIR/local.zsh
+        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+        [ $commands[mise] ] && eval "$(mise activate zsh)"
+    ' \
+    for 'zdharma-continuum/null'
 
