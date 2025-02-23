@@ -26,16 +26,6 @@ zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-completions' \
     @'zdharma-continuum/fast-syntax-highlighting'
 zinit ice depth=1; zinit light romkatv/gitstatus
-zinit ice lucid depth=1 blockf; zinit light yuki-yano/zeno.zsh
-
-# zinit ice atload'{
-#     bindkey " "  zeno-auto-snippet
-#     bindkey "^m" zeno-auto-snippet-and-accept-line
-#     bindkey "^i" zeno-completion
-#     bindkey "^g" zeno-ghq-cd
-#     bindkey "^r" zeno-history-selection
-#     bindkey "^x" zeno-insert-snippet
-# }';  zinit light 'yuki-yano/zeno.zsh'
 
 ### Completion ###
 zstyle ':completion:*' menu select
