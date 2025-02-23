@@ -1,0 +1,24 @@
+name: benchmark
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
+          make zsh
+      - name: Clone zsh-bench repository
+        run: git clone https://github.com/romkatv/zsh-bench ~/zsh-bench
+      - name: Run zsh-bench
+        run: |
+          cd ~/zsh-bench
+          ./zsh-bench >> $GITHUB_STEP_SUMMARY
