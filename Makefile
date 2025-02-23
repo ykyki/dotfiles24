@@ -12,9 +12,19 @@ LN := ln -sv
 CP := cp -v
 
 XDG_CONFIG_HOME := ${HOME}/.config
-ZDOTDIR         := ${XDG_CONFIG_HOME}/zsh
+XDG_DATA_HOME   := ${HOME}/.local/share
+XDG_STATE_HOME  := ${HOME}/.local/state
+XDG_CACHE_HOME  := ${HOME}/.cache
+
+.PHONY: xdg-homes
+xdg-homes:
+	mkdir -p ${XDG_CONFIG_HOME}
+	mkdir -p ${XDG_DATA_HOME}
+	mkdir -p ${XDG_STATE_HOME}
+	mkdir -p ${XDG_CACHE_HOME}
 
 .PHONY: zsh
+ZDOTDIR := ${XDG_CONFIG_HOME}/zsh
 zsh:
 	mkdir -p ${ZDOTDIR}
 	test -L ${HOME}/.zshenv       || ${LN} ${PWD}/zsh/.zshenv           ${HOME}/.zshenv
