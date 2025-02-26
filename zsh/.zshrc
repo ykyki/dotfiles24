@@ -47,7 +47,7 @@ function my_set_prompt() {
     # PROMPT+="%{$fg[white]%}%m"
     # PROMPT+=':'
     # PROMPT+="%{$fg[yellow]%}%1~%{$reset_color%}"
-    PROMPT+="%{$fg[yellow]%}%2~%{$reset_color%}"
+    PROMPT+="%{$terminfo[smul]$fg[yellow]%}%2~%{$reset_color%}"
     PROMPT+='%#'
     PROMPT+=' '
     RPROMPT=''
