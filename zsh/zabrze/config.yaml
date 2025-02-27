@@ -4,6 +4,12 @@ abbrevs:
     abbr: '.1'
     snippet: awk '{print $1}'
 
+  - name: git push (force safely)
+    abbr: -f
+    snippet: --force-with-lease --force-if-includes
+    global: true
+    context: '^git push\s'
+
   - name: terraform
     abbr: tf
     snippet: terraform
