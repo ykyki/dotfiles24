@@ -28,7 +28,7 @@ abbrevs:
     if: (( ${+commands[podman]} ))
 
   - name: kubectl
-    abbr: ku
+    abbr: kc
     snippet: kubectl
     if: (( ${+commands[kubectl]} ))
 
