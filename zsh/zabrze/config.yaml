@@ -10,13 +10,30 @@ abbrevs:
     global: true
     context: '^git push\s'
 
+  - name: docker
+    abbr: do
+    snippet: docker
+    if: (( ${+commands[docker]} ))
+
+  - name: docker compose
+    abbr: co
+    snippet: compose
+    if: (( ${+commands[docker]} ))
+    global: true
+    context: '^docker\s'
+
+  - name: podman
+    abbr: po
+    snippet: podman
+    if: (( ${+commands[podman]} ))
+
+  - name: kubectl
+    abbr: ku
+    snippet: kubectl
+    if: (( ${+commands[kubectl]} ))
+
   - name: terraform
     abbr: tf
     snippet: terraform
-    if: (( ${+commands[terraform]} )) # available if terraform is installed
-
-  - name: kubectl
-    abbr: k
-    snippet: kubectl
-    if: (( ${+commands[kubectl]} ))
+    if: (( ${+commands[terraform]} ))
 
