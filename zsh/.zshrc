@@ -145,10 +145,11 @@ alias lla="ls -lA"
 ### Others ###
 zinit wait lucid light-mode as'null' \
     atinit'
+        [[ $commands[fzf] ]] &&  source <(fzf --zsh)
+        [[ $commands[mise] ]] && eval "$(mise activate zsh)"
+        [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
         source "$ZDOTDIR/common.zsh"
         source $ZDOTDIR/local.zsh
-        [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-        [ $commands[mise] ] && eval "$(mise activate zsh)"
     ' \
     for 'zdharma-continuum/null'
 
