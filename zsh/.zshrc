@@ -69,7 +69,9 @@ function my_set_prompt() {
         # RPROMPT+="%{$fg[yellow]%}%3d%{$reset_color%}"
     fi
     # RPROMPT+="%{$fg[blue]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
-    RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
+    # RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
+    CURRENT_TIME=$(date "+%H:%M:%S")
+    RPROMPT+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
     setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
 }
 gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
