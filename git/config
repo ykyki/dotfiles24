@@ -10,8 +10,6 @@
 	followTags = true
 [pull]
 	rebase = false
-[commit]
-	gpgsign = true
 [credential]
 	helper = cache --timeout=86400
 [color]
