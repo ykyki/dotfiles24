@@ -1,7 +1,7 @@
-local action = require('telescope.actions')
+-- local action = require('telescope.actions')
 
 local opts = {
-  defaults = {
+  defaults   = {
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -42,7 +42,7 @@ local opts = {
     dynamic_preview_title = true,
     color_devicons = true,
   },
-  pickers = {
+  pickers    = {
     find_files = {
       hidden = true,
     },
@@ -69,4 +69,5 @@ vim.keymap.set('n', '<c-p>', builtin.find_files, {})
 vim.keymap.set('n', '<localleader>p', builtin.live_grep, {})
 vim.keymap.set('n', '<localleader>b', builtin.buffers, {})
 vim.keymap.set('n', '<localleader>h', builtin.help_tags, {})
+vim.keymap.set('n', '<localleader>r', builtin.resume, {})
 vim.keymap.set('n', '<localleader>e', ":Telescope frecency<CR>", {})
