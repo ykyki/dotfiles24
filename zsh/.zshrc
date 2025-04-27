@@ -153,6 +153,7 @@ zinit wait lucid light-mode as'null' \
         [[ $commands[mise] ]] && eval "$(mise activate zsh)"
         [[ $commands[podman] ]] && source <(podman completion zsh)
         [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+        [[ $commands[uv] ]] && eval "$(uv generate-shell-completion zsh)"
         source "$ZDOTDIR/common.zsh"
         source $ZDOTDIR/local.zsh
     ' \
