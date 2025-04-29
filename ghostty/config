@@ -11,3 +11,7 @@ background-blur-radius = 3
 
 quit-after-last-window-closed = true
 
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
