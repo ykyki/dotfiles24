@@ -166,6 +166,20 @@ local plugins = {
     }
   },
 
+  -- Restore Session
+  {
+    -- https://github.com/rmagatti/auto-session
+    'rmagatti/auto-session',
+    lazy = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Downloads', '/' },
+    }
+  },
+
   {
     -- https://github.com/lewis6991/gitsigns.nvim
     "lewis6991/gitsigns.nvim",
