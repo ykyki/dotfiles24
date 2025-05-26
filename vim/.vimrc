@@ -69,7 +69,7 @@ augroup MyAutoCmd
 augroup END
 
 " --- Key Mapping
-inoremap jk <ESC>
+" inoremap jk <ESC>
 nnoremap j  gj
 nnoremap k  gk
 nnoremap gj j
