@@ -1,4 +1,6 @@
 .DS_Store
 Session.vim
+
 .ykyki/
+**/.claude/settings.local.json
 
