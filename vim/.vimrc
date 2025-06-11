@@ -255,7 +255,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update         = 10
 let g:ctrlp_match_func          = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|venv|target|\.next)$',
+    \ 'dir':  '\v[\/](\.(git|hg|svn|idea)|out|tags|branches|node_modules|vendor(|s)|\.venv|target|\.next)$',
     \ 'file': '\v\.(exe|bat|bin|so|dll|jpg|png|pdf|dvi|aux|blg|log|thm|idx|synctex.gz|fls|out|fdb_latexmk|nav|snm|sta|ilg|ind|DS_Store|gitkeep|class)$',
 \ }
 let g:ctrlp_prompt_mappings = {
