@@ -1,31 +1,15 @@
 [core]
-	ignorecase = false
 	quotepath  = false
 	editor     = vim
 [init]
 	defaultBranch = main
-	# templatedir = ~/dotfiles/.git_template # FIX
-[push]
-	default = simple
-	followTags = true
-[pull]
-	rebase = false
 [credential]
 	helper = cache --timeout=86400
-[color]
-	status      = auto
-	diff        = auto
-	branch      = auto
-	interactive = auto
-	grep        = auto
-	ui          = true
 [ghq]
 	root = ~/go/src # remove this root in the future
 	root = ~/ghq
 [alias]
 	ce       = config --edit
 	ceg      = config --edit --global
-	llog     = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
-	history  = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
 [include]
 	path = conf.d/local.conf
