@@ -20,7 +20,8 @@
 	grep        = auto
 	ui          = true
 [ghq]
-	root = ~/go/src
+	root = ~/go/src # remove this root in the future
+	root = ~/ghq
 [alias]
 	ce       = config --edit
 	ceg      = config --edit --global
