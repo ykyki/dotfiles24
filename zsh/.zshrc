@@ -119,6 +119,7 @@ typeset -gU PATH path
 typeset -gU FPATH fpath
 path=(
     '/usr/local/bin'(N-/)
+    "$HOME/.local/bin"(N-)
     "$HOME/.local/share/mise/shims"(N-)
     '/opt/homebrew/bin'(N-/)
     '/opt/homebrew/opt/llvm/bin'(N-/)
