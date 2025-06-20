@@ -36,6 +36,9 @@ set nospell
 " set spelllang=en,cjk
 set nrformats-=octal
 
+set ignorecase
+set smartcase " 大文字が含まれているときにはcase sensitive
+
 " --- Appearance
 syntax enable " シンタックスハイライトの有効化
 set termguicolors
