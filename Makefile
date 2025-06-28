@@ -92,6 +92,14 @@ clean-nvim:
 	rm -rf ${HOME}/.local/share/${NVIM_APPNAME}
 	rm -rf ${HOME}/.local/state/${NVIM_APPNAME}
 
+.PHONY: claude
+CLAUDE_CONFIG_DIR := ${XDG_CONFIG_HOME}/claude
+# CLAUDE_CONFIG_DIR := ${HOME}/.claude
+claude:
+	mkdir -p ${CLAUDE_CONFIG_DIR}
+	test -L ${CLAUDE_CONFIG_DIR}/settings.json || ${LN} ${PWD}/claude/settings.json ${CLAUDE_CONFIG_DIR}/settings.json
+	test -L ${CLAUDE_CONFIG_DIR}/CLAUDE.md || ${LN} ${PWD}/claude/CLAUDE.md ${CLAUDE_CONFIG_DIR}/CLAUDE.md
+
 .PHONY: container-local container-remote
 USER_NAME := ykyki
 IMAGE_NAME := d24-ubuntu

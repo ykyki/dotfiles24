@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Read(.env.*)",
+      "Write(.env*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+    ]
+  },
+}
