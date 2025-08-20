@@ -93,3 +93,13 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
   pattern = "*",
   command = "echohl WarningMsg | echo \"File changed on disk. Buffer reloaded.\" | echohl None"
 })
+
+-- markdownファイル専用設定
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end
+})
