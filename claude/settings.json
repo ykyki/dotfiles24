@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(*)"
+      "WebFetch(*)",
+      "Bash(gh run view:*)",
+      "Bash(gh workflow view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh release list:*)",
+      "Bash(gh release view:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
