@@ -16,6 +16,9 @@ XDG_DATA_HOME   := ${HOME}/.local/share
 XDG_STATE_HOME  := ${HOME}/.local/state
 XDG_CACHE_HOME  := ${HOME}/.cache
 
+.PHONY: base
+base: xdg-homes zsh vim
+
 .PHONY: xdg-homes
 xdg-homes:
 	mkdir -p ${XDG_CONFIG_HOME}
