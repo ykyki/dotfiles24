@@ -153,9 +153,6 @@ call plug#begin()
     " https://github.com/michaeljsmith/vim-indent-object
     Plug 'michaeljsmith/vim-indent-object'
 
-    " https://github.com/junegunn/vim-peekaboo
-    Plug 'junegunn/vim-peekaboo'
-
     " https://github.com/google/vim-searchindex
     Plug 'google/vim-searchindex'
 
@@ -197,13 +194,6 @@ call plug#end()
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsMapBS   = 1
 let g:AutoPairsMapCh   = 1
-
-" ----- /junegunn/vim-peekaboo
-let g:peekaboo_window     = 'vert bo 30new'
-let g:peekaboo_delay      = 0
-let g:peekaboo_compact    = 0
-let g:peekaboo_prefix     = ''
-let g:peekaboo_ins_prefix = ''
 
 " ----- google/vim-searchindex
 let g:searchindex_line_limit = 1000000
