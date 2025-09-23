@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(*)",
+      "WebFetch",
+      "Fetch",
       "Bash(gh run view:*)",
       "Bash(gh workflow view:*)",
       "Bash(gh pr list:*)",
