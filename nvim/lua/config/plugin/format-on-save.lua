@@ -6,16 +6,16 @@ format_on_save.setup({
     "/node_modules/",
   },
   formatter_by_ft = {
-    lua = formatters.lsp,
-    sh = formatters.shfmt,
-    json = formatters.lsp,
-    yaml = formatters.lsp,
-    javascript = formatters.lsp,
-    typescript = formatters.lsp,
+    lua             = formatters.lsp,
+    sh              = formatters.lsp,
+    json            = formatters.lsp,
+    yaml            = formatters.lsp,
+    javascript      = formatters.lsp,
+    typescript      = formatters.lsp,
     typescriptreact = formatters.lsp,
-    html = formatters.lsp,
-    css = formatters.lsp,
-    scss = formatters.lsp,
+    html            = formatters.lsp,
+    css             = formatters.lsp,
+    scss            = formatters.lsp,
     -- markdown = { formatters.prettierd,
     --   formatters.shell({
     --     cmd = { "markdown-toc", "-i", "%" },
@@ -24,8 +24,8 @@ format_on_save.setup({
     --     end
     --   }) },
     -- python = formatters.black,
-    rust = formatters.lsp,
-    go = {
+    rust            = formatters.lsp,
+    go              = {
       -- Use a tempfile instead of stdin
       -- formatters.shell({
       --   cmd = { "goimports-reviser", "-rm-unused", "-set-alias", "-format", "%" },
@@ -35,7 +35,7 @@ format_on_save.setup({
       -- }),
       formatters.shell({ cmd = { "gofmt" } }),
     },
-    java = formatters.lsp,
+    java            = formatters.lsp,
   },
   fallback_formatter = {
     formatters.remove_trailing_whitespace,
