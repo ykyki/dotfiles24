@@ -7,8 +7,5 @@
 	helper = cache --timeout=86400
 [ghq]
 	root = ~/ghq
-[alias]
-	ce       = config --edit
-	ceg      = config --edit --global
 [include]
 	path = conf.d/local.conf
