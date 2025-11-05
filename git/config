@@ -8,4 +8,4 @@
 [ghq]
 	root = ~/ghq
 [include]
-	path = conf.d/local.conf
+	path = local.gitconfig

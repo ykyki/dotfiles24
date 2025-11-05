@@ -1,0 +1,11 @@
+# cf. https://bitwarden.com/help/ssh-agent/#authenticate-with-git-repositories
+# [gpg]
+# 	format = ssh
+# [user]
+# 	signingkey = <Your_Public_Key>
+# 	name = ykyki
+# 	email = bsyki@pm.me
+# [commit]
+# 	gpgsign = true
+# [gpg "ssh"]
+# 	allowedSignersFile = <Path_To_allowedSignersFile>
