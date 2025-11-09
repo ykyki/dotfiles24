@@ -148,7 +148,7 @@ alias lla="ls -lA"
 # alias -g @less=" | less -iNRS" # read it at less
 
 ### Others ###
-zinit wait lucid light-mode as'null' \
+zinit wait lucid light-mode as'null' id-as'local-init' \
     atinit'
         [[ $commands[fzf] ]] &&  source <(fzf --zsh)
         [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
