@@ -1,17 +1,65 @@
-font-size = 12
+# doc: https://ghostty.org/docs/config/reference
 
+# ================
+# CLI
+# ================
+# ghostty +help
+# ghostty +list-fonts
+# ghostty +boo
+
+
+# ================
+# keybinds
+# ================
+# see: ghostty +list-keybinds
+# super = Command ⌘ (macOS)
+#
+# super + shift + ,               reload_config
+# super + +                       increase_font_size:1
+# super + -                       decrease_font_size:1
+# super + ,                       open_config
+# super + 0                       reset_font_size
+# super + n                       new_window
+
+
+# ================
+# Configurations
+# ================
+# ghostty +show-config
+# ghostty +validate-config
+
+# apply config immediately after exit
+quit-after-last-window-closed = true
+
+# see: ghostty +list-themes
+# theme = Birds Of Paradise
+theme = 0x96f
+
+# see: ghostty +list-fonts
+font-family = "UDEV Gothic NF"
+font-size = 11
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+window-width           = 72
+window-height          = 32
 window-padding-x       = 5
 window-padding-y       = 5
 window-padding-balance = true
 
-background-opacity     = 0.95
-background-blur-radius = 3
+# background-opacity     = 0.95
+# background-blur-radius = 3
 
-# macos-titlebar-style = hidden
 
-quit-after-last-window-closed = true
+# ================
+# for macOS
+# ================
+window-position-x = 400
+window-position-y = 200
 
-font-feature = -calt
-font-feature = -liga
-font-feature = -dlig
+# When "hidden",
+# use option+click on the resizable areas of the frame
+# to drag the window.
+macos-titlebar-style = hidden
 
