@@ -2,7 +2,6 @@
   "permissions": {
     "allow": [
       "WebFetch",
-      "Fetch",
       "Bash(gh run view:*)",
       "Bash(gh workflow view:*)",
       "Bash(gh pr list:*)",
@@ -18,13 +17,12 @@
     "deny": [
       "Bash(sudo:*)",
       "Bash(rm:*)",
-      "Bash(rm -rf:*)",
       "Bash(git push:*)",
       "Bash(git commit:*)",
       "Read(.env.*)",
       "Write(.env*)",
       "Bash(curl:*)",
-      "Bash(wget:*)",
+      "Bash(wget:*)"
     ]
-  },
+  }
 }
