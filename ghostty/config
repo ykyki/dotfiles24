@@ -63,3 +63,9 @@ window-position-y = 200
 # to drag the window.
 macos-titlebar-style = hidden
 
+
+# ================
+# load local config
+# ================
+config-file = ?local.conf
+

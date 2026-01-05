@@ -80,7 +80,8 @@ alacritty:
 GHOSTTY_CONFIG_DIR := ${XDG_CONFIG_HOME}/ghostty
 ghostty:
 	mkdir -p ${GHOSTTY_CONFIG_DIR}
-	test -L ${GHOSTTY_CONFIG_DIR}/config || ${LN} ${PWD}/ghostty/config ${GHOSTTY_CONFIG_DIR}/config
+	test -L ${GHOSTTY_CONFIG_DIR}/config     || ${LN} ${PWD}/ghostty/config     ${GHOSTTY_CONFIG_DIR}/config
+	test -f ${GHOSTTY_CONFIG_DIR}/local.conf || ${CP} ${PWD}/ghostty/local.conf ${GHOSTTY_CONFIG_DIR}/local.conf
 
 .PHONY: nvim clean-nvim
 NVIM_APPNAME    := nvim
