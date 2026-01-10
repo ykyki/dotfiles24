@@ -1,8 +1,5 @@
 # CLAUDE.md
 
-## Language Settings
-Think in English, respond in Japanes.
-
 ## GitHub Operations
 When performing ANY GitHub operations via `gh` CLI that involve writing
 comments or creating content (including but not limited to: PR comments,
