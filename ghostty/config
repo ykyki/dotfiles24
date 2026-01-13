@@ -55,7 +55,7 @@ window-padding-balance = true
 # ================
 # for macOS
 # ================
-window-position-x = 400
+window-position-x = 300
 window-position-y = 200
 
 # When "hidden",
