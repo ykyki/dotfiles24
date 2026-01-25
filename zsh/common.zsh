@@ -17,7 +17,7 @@ function cd-git-repository () {
         +m \
         --inline-info \
         --border \
-        --preview "tree -L 1 $ROOT/{} | head -100" \
+        --preview "git -C $ROOT/{} log -n50 --pretty=format:'%ad %s' --date=short" \
         --prompt="Repository > "
     )
     if   [ -n "$REPO" ]; then
