@@ -7,6 +7,7 @@ alias cdd='cd $HOME/dotfiles24 && git fetch'
 alias cdgt='cd $(git rev-parse --show-toplevel); pwd'
 alias cdg='cd-git-repository && git fetch'
 alias cdgq='cd-git-repository'
+alias cdgw='cd-git-worktree'
 function cd-git-repository () {
     local ROOT=$(ghq root)
     local REPO=$(
@@ -23,6 +24,27 @@ function cd-git-repository () {
     if   [ -n "$REPO" ]; then
         echo $REPO
         cd $ROOT/$REPO
+    else
+        pwd
+        return 1
+    fi
+}
+function cd-git-worktree () { #git-wt is required (https://github.com/k1LoW/git-wt)
+    local ROOT=$(git rev-parse --show-toplevel)
+    local WORKTREE=$(
+        git wt \
+        | tail -n +2 \
+        | fzf \
+        --reverse \
+        +m \
+        --inline-info \
+        --border \
+        --prompt="Worktree > " \
+        | awk '{print $1}'
+    )
+    if   [ -n "$WORKTREE" ]; then
+        echo $WORKTREE
+        cd $WORKTREE
     else
         pwd
         return 1
