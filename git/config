@@ -9,3 +9,5 @@
 	root = ~/ghq
 [include]
 	path = local.gitconfig
+[wt]
+	basedir = .ykyki/wt
