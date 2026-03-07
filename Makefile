@@ -96,8 +96,8 @@ clean-nvim:
 	rm -rf ${HOME}/.local/state/${NVIM_APPNAME}
 
 .PHONY: claude
-CLAUDE_CONFIG_DIR := ${XDG_CONFIG_HOME}/claude
-# CLAUDE_CONFIG_DIR := ${HOME}/.claude
+# CLAUDE_CONFIG_DIR := ${XDG_CONFIG_HOME}/claude
+CLAUDE_CONFIG_DIR := ${HOME}/.claude
 claude:
 	mkdir -p ${CLAUDE_CONFIG_DIR}
 	test -L ${CLAUDE_CONFIG_DIR}/settings.json || ${LN} ${PWD}/claude/settings.json ${CLAUDE_CONFIG_DIR}/settings.json
