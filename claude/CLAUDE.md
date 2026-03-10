@@ -11,3 +11,9 @@ ALWAYS append the following signature at the end of the message body:
 🤖 Generated with Claude Code
 ```
 
+## Preferred Commands
+
+When running shell commands, follow these preferences:
+
+- Use `jq` (never `python`) to read and query JSON files.
+
