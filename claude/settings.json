@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch",
       "WebSearch",
+      "Bash(gh run list:*)",
       "Bash(gh run view:*)",
+      "Bash(gh workflow list:*)",
       "Bash(gh workflow view:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
