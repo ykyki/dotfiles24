@@ -133,6 +133,7 @@ path=(
     "$RUSTUP_HOME/bin"(N-/)
     "$CARGO_HOME/bin"(N-/)
     "$HOME/.elan/bin"(N-/)
+    "$HOME/.deno/bin"(N-/)
     '/usr/local/texlive/2024/bin/universal-darwin'(N-)
     "$path[@]"
 )
