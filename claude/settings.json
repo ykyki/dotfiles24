@@ -19,7 +19,6 @@
     ],
     "deny": [
       "Bash(sudo:*)",
-      "Bash(rm:*)",
       "Bash(git push:*)",
       "Read(.env.*)",
       "Write(.env*)",
