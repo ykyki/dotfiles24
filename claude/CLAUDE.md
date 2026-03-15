@@ -1,5 +1,9 @@
 # CLAUDE.md
 
+## User Interaction Language
+
+- Always respond in Japanese.
+
 ## GitHub Operations
 When performing ANY GitHub operations via `gh` CLI that involve writing
 comments or creating content (including but not limited to: PR comments,
