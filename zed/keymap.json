@@ -1,0 +1,22 @@
+[
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "shift-j": "pane::ActivatePreviousItem",
+      "shift-k": "pane::ActivateNextItem",
+      "shift-x": "pane::CloseActiveItem",
+      "g shift-t": "workspace::NewFile",
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "ctrl-w -": "pane::SplitDown",
+      "ctrl-w \\": "pane::SplitRight",
+      "ctrl-p": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      "<": ["workspace::SendKeystrokes", "< g v"],
+      ">": ["workspace::SendKeystrokes", "> g v"],
+    },
+  },
+]

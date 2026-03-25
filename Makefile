@@ -103,6 +103,14 @@ claude:
 	test -L ${CLAUDE_CONFIG_DIR}/settings.json || ${LN} ${PWD}/claude/settings.json ${CLAUDE_CONFIG_DIR}/settings.json
 	test -L ${CLAUDE_CONFIG_DIR}/CLAUDE.md || ${LN} ${PWD}/claude/CLAUDE.md ${CLAUDE_CONFIG_DIR}/CLAUDE.md
 
+.PHONY: zed
+ZED_CONFIG_DIR := ${XDG_CONFIG_HOME}/zed
+zed:
+	mkdir -p ${ZED_CONFIG_DIR}
+	test -L ${ZED_CONFIG_DIR}/settings.json || ${LN} ${PWD}/zed/settings.json ${ZED_CONFIG_DIR}/settings.json
+	test -L ${ZED_CONFIG_DIR}/keymap.json   || ${LN} ${PWD}/zed/keymap.json   ${ZED_CONFIG_DIR}/keymap.json
+	test -L ${ZED_CONFIG_DIR}/tasks.json    || ${LN} ${PWD}/zed/tasks.json    ${ZED_CONFIG_DIR}/tasks.json
+
 .PHONY: container-local container-remote
 USER_NAME := ykyki
 IMAGE_NAME := d24-ubuntu

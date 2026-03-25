@@ -1,0 +1,30 @@
+{
+  "buffer_line_height": "standard",
+  "ui_font_size": 15.0,
+  "buffer_font_size": 11.0,
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "terminal": {
+    "dock": "right",
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "expand_excerpt_lines": 5,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": true,
+  "base_keymap": "JetBrains",
+  "max_tabs": 7,
+  "show_edit_predictions": true,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+}
