@@ -101,7 +101,6 @@ nnoremap Q  <Nop>
 noremap [plugin] <Nop>
 nmap <Leader> [plugin]
 vmap <Leader> [plugin]
-nnoremap [plugin]z :setlocal wrap!<CR>
 
 " ----- Quick Memo
 " let s:memo_path = expand('~/.local/share/memo.md') " 保存先
