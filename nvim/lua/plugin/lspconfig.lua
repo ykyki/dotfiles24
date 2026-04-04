@@ -46,7 +46,29 @@ vim.diagnostic.config({ virtual_text = true })
 
 local keymap = vim.keymap.set
 local s = { silent = true }
-keymap("n", "==", function()
-    vim.lsp.buf.format()
-end, s)
 
+-- see also default keymaps: https://neovim.io/doc/user/lsp/#_quickstart
+--     "gra" (Normal and Visual mode) is mapped to vim.lsp.buf.code_action()
+--     "gri" is mapped to vim.lsp.buf.implementation()
+--     "grn" is mapped to vim.lsp.buf.rename()
+--     "grr" is mapped to vim.lsp.buf.references()
+--     "grt" is mapped to vim.lsp.buf.type_definition()
+--     "grx" is mapped to vim.lsp.codelens.run()
+--     "gO" is mapped to vim.lsp.buf.document_symbol()
+--     CTRL-S (Insert mode) is mapped to vim.lsp.buf.signature_help()
+--     v_an and v_in fall back to LSP vim.lsp.buf.selection_range() if treesitter is not active.
+--     gx handles textDocument/documentLink. Example: with gopls, invoking gx on "os" in this Go code will open documentation externally:
+keymap("n", "gd", vim.lsp.buf.definition, s)
+keymap("n", "gD", vim.lsp.buf.declaration, s)
+keymap("n", "gi", vim.lsp.buf.implementation, s)
+keymap("n", "gr", vim.lsp.buf.references, s)
+-- keymap("n", "gy", vim.lsp.buf.type_definition, s)
+keymap("n", "gh", vim.lsp.buf.hover, s)
+-- keymap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, s)
+keymap("n", "<F2>", vim.lsp.buf.rename, s)
+keymap("n", "[d", vim.diagnostic.goto_prev, s)
+keymap("n", "]d", vim.diagnostic.goto_next, s)
+-- keymap("n", "<leader>e", vim.diagnostic.open_float, s)
+-- keymap("n", "<leader>q", vim.diagnostic.setloclist, s)
+
+keymap("n", "==", vim.lsp.buf.format, {})

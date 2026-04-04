@@ -32,4 +32,5 @@ keymap("n", "J", ":BufferLineCyclePrev<CR>", s)
 keymap("n", "K", ":BufferLineCycleNext<CR>", s)
 keymap("n", "gJ", ":BufferLineMovePrev<CR>", s)
 keymap("n", "gK", ":BufferLineMoveNext<CR>", s)
+keymap("n", "X", ":bdelete<CR>", s)
 
