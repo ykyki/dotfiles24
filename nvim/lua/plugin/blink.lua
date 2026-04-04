@@ -17,9 +17,23 @@ end
 mod.setup({
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = {
+      preset = 'none',
+      ['<Tab>'] = { 'select_and_accept', 'fallback' },
+      ['<C-n>'] = { 'select_next', 'fallback' },
+      ['<C-p>'] = { 'select_prev', 'fallback' },
+      ['<C-e>'] = { 'cancel', 'fallback' },
+    },
 
-    completion = { documentation = { auto_show = false } },
+    completion = {
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = false,
+        },
+      },
+      documentation = { auto_show = false },
+    },
 
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
