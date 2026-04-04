@@ -29,6 +29,8 @@ vim.opt.listchars = "tab: ,eol:󰌑"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
+vim.opt.exrc = true
+
 -- ########
 -- netrw
 -- ########

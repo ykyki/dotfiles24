@@ -9,7 +9,6 @@ vim.pack.add({
     },
 })
 
-require('kanagawa').setup({
-})
+require('kanagawa').setup({})
 vim.cmd.colorscheme('kanagawa')
 
