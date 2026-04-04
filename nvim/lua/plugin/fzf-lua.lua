@@ -13,7 +13,11 @@ if not ok then
     return
 end
 
-mod.setup({})
+mod.setup({
+    files = {
+        cwd_prompt = false,
+    },
+})
 
 local keymap = vim.keymap.set
 local s = { silent = true }
