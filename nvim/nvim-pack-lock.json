@@ -1,5 +1,10 @@
 {
   "plugins": {
+    "auto-pairs": {
+      "rev": "39f06b873a8449af8ff6a3eee716d3da14d63a76",
+      "src": "https://github.com/jiangmiao/auto-pairs",
+      "version": "'v2.0.0'"
+    },
     "blink.cmp": {
       "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
       "src": "https://github.com/saghen/blink.cmp",
@@ -44,6 +49,26 @@
       "rev": "0203a9608d63eda57679b01e69f33a7b4c34b0d1",
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": "'v2.7.0'"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'v0.10.0'"
+    },
+    "rainbow-delimiters.nvim": {
+      "rev": "50080ed0f44dbc18ae13b81278a01b951a06127a",
+      "src": "https://github.com/HiPhish/rainbow-delimiters.nvim",
+      "version": "'v0.11.0'"
+    },
+    "vim-easy-align": {
+      "rev": "9815a55dbcd817784458df7a18acacc6f82b1241",
+      "src": "https://github.com/junegunn/vim-easy-align",
+      "version": "'2.10.0'"
+    },
+    "vim-surround": {
+      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
+      "src": "https://github.com/tpope/vim-surround",
+      "version": "'v2.2'"
     }
   }
 }
