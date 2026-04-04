@@ -35,11 +35,18 @@ mason_lspconfig.setup({
     ensure_installed = {
         'lua_ls',
         'ts_ls',
+        'denols',
+        'gopls',
+        'rust_analyzer',
+        'bashls',
     },
 })
+
+vim.diagnostic.config({ virtual_text = true })
 
 local keymap = vim.keymap.set
 local s = { silent = true }
 keymap("n", "==", function()
     vim.lsp.buf.format()
 end, s)
+
