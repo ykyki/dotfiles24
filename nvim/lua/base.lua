@@ -33,8 +33,8 @@ vim.opt.exrc          = true
 vim.g.netrw_liststyle = 1
 
 vim.pack.add({
-    { src = "https://github.com/tpope/vim-surround", version = "v2.2" },
-    { src = "https://github.com/jiangmiao/auto-pairs", version = "v2.0.0" },
+    { src = "https://github.com/tpope/vim-surround",      version = "v2.2" },
+    { src = "https://github.com/jiangmiao/auto-pairs",    version = "v2.0.0" },
     { src = "https://github.com/junegunn/vim-easy-align", version = "2.10.0" },
 })
 

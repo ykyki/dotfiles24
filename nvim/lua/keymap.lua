@@ -16,16 +16,15 @@ keymap("n", "<Leader>ex", "<cmd>Ex %:p:h<CR>") -- Open Netrw in the current file
 -- ########
 -- info: to delete a package, run ":lua vim.pack.del({'package_name'})"
 keymap("n", "<leader>ps", function()
-  -- update plugins
-  vim.pack.update()
+    -- update plugins
+    vim.pack.update()
 
-  -- remove unused plugins
-  local unused = vim.iter(vim.pack.get())
-    :filter(function(p) return not p.active end)
-    :map(function(p) return p.spec.name end)
-    :totable()
-  if #unused > 0 then
-    vim.pack.del(unused)
-  end
+    -- remove unused plugins
+    local unused = vim.iter(vim.pack.get())
+        :filter(function(p) return not p.active end)
+        :map(function(p) return p.spec.name end)
+        :totable()
+    if #unused > 0 then
+        vim.pack.del(unused)
+    end
 end, s)
-
