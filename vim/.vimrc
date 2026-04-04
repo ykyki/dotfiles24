@@ -22,9 +22,9 @@ filetype plugin indent on
 set expandtab
 set tabstop=4
 set shiftwidth=0
-set softtabstop=0
+set softtabstop=-1
 set smarttab
-set smartindent
+set autoindent
 autocmd FileType yaml      setlocal expandtab   tabstop=2 shiftwidth=0
 autocmd FileType lua       setlocal expandtab   tabstop=2 shiftwidth=0
 autocmd FileType php       setlocal expandtab   tabstop=4 shiftwidth=0
@@ -36,9 +36,6 @@ set nospell
 " set spelllang=en,cjk
 set nrformats-=octal
 
-set ignorecase
-set smartcase " 大文字が含まれているときにはcase sensitive
-
 " --- Appearance
 syntax enable " シンタックスハイライトの有効化
 set termguicolors
@@ -47,6 +44,8 @@ set updatetime=500
 set number " 行番号を表示
 set noincsearch " 検索時にインクリメンタルサーチをしない
 set hlsearch " 検索時にハイライト
+set ignorecase
+set smartcase " 大文字が含まれているときにはcase sensitive
 set visualbell " ビープ音を可視化
 set showmatch " 括弧入力時の対応する括弧を表示
 set matchtime=1
@@ -90,7 +89,7 @@ nnoremap <silent> X  :bd<CR>
 " nnoremap <silent> gJ :tabmove -1<CR>
 " nnoremap <silent> gK :tabmove +1<CR>
 nnoremap <silent> gT :enew<CR>
-nnoremap Y y$
+" nnoremap Y y$
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
 vnoremap < <gv
