@@ -5,6 +5,11 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1.10.1'"
     },
+    "bufferline.nvim": {
+      "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "src": "https://github.com/akinsho/bufferline.nvim",
+      "version": "'v4.9.1'"
+    },
     "fzf-lua": {
       "rev": "5cbe58ca48c4c4a2fbe5e324b854596d8242711e",
       "src": "https://github.com/ibhagwan/fzf-lua",

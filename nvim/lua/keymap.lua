@@ -10,6 +10,7 @@ keymap("n", "gT", "<cmd>tabnew<CR>", s)
 keymap("n", "<C-w>\\", "<cmd>vsplit<CR>", s)
 keymap("n", "<C-w>-", "<cmd>split<CR>", s)
 keymap("n", "<Leader>==", ":lua vim.lsp.buf.format()<CR>", s)
+keymap("n", "<Leader>ex", "<cmd>Ex %:p:h<CR>") -- Open Netrw in the current file's directory
 
 -- ########
 -- vim.pack

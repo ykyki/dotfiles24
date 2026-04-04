@@ -29,3 +29,8 @@ vim.opt.listchars = "tab: ,eol:󰌑"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
+-- ########
+-- netrw
+-- ########
+vim.g.netrw_liststyle = 1 -- Use the long listing view
+
