@@ -25,7 +25,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.matchtime = 1
 vim.opt.list = true -- Show whitespace characters
-vim.opt.listchars = "tab: ,multispace:|   ,eol:󰌑"
+vim.opt.listchars = "tab: ,eol:󰌑"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 

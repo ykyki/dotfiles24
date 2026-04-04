@@ -2,16 +2,17 @@ vim.pack.add({
     { 
       src = "https://github.com/lewis6991/gitsigns.nvim",
       version = "v2.1.0",
+      event = { "BufReadPost", "BufNewFile" },
     },
 })
 
-local ok, gitsigns = pcall(require, "gitsigns")
+local ok, mod = pcall(require, "gitsigns")
 if not ok then
   vim.notify("Failed to load gitsigns.", vim.log.levels.WARN)
   return
 end
 
-gitsigns.setup({
+mod.setup({
   signs                        = {
     add          = { text = '│' },
     change       = { text = '│' },
