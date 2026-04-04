@@ -3,7 +3,7 @@ require('keymap')
 require('autocmd')
 require('plugin.gitsigns')
 require('plugin.fzf-lua')
+require('plugin.lspconfig')
 require('plugin.blink')
 require('plugin.bufferline')
 require('colorscheme')
-
