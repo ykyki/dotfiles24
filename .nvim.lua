@@ -8,3 +8,13 @@ vim.pack.add({
 require('jellybeans').setup({})
 vim.cmd.colorscheme('jellybeans-warm')
 
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' },
+            },
+        },
+    },
+})
+

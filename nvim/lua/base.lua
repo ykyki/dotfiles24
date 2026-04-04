@@ -18,9 +18,9 @@ vim.opt.clipboard:prepend({ "unnamedplus" })
 vim.opt.termguicolors = true
 -- opt.colorcolumn = "80" -- Highlight column 80
 vim.opt.number = true
-vim.opt.numberwidth = 2 -- Width of the line number column
+vim.opt.numberwidth = 2      -- Width of the line number column
 vim.opt.signcolumn = "yes:1" -- Always show sign column
-vim.opt.hlsearch = true 
+vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.matchtime = 1
@@ -35,4 +35,3 @@ vim.opt.exrc = true
 -- netrw
 -- ########
 vim.g.netrw_liststyle = 1 -- Use the long listing view
-
