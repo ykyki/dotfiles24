@@ -20,6 +20,11 @@
       "src": "https://github.com/stevearc/conform.nvim",
       "version": "'v9.1.0'"
     },
+    "copilot.vim": {
+      "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
+      "src": "https://github.com/github/copilot.vim",
+      "version": "'a12fd5672110c8aa7e3c8419e28c96943ca179be'"
+    },
     "fzf-lua": {
       "rev": "5cbe58ca48c4c4a2fbe5e324b854596d8242711e",
       "src": "https://github.com/ibhagwan/fzf-lua",
