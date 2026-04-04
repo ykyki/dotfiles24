@@ -10,3 +10,13 @@ autocmd('TextYankPost', {
     end,
     group = highlight_group,
 })
+
+-- Auto-reload files changed outside of Neovim
+autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+    pattern = '*',
+    command = "if mode() != 'c' | checktime | endif",
+})
+autocmd('FileChangedShellPost', {
+    pattern = '*',
+    command = 'echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None',
+})
