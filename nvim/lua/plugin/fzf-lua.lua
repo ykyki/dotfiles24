@@ -6,15 +6,14 @@ vim.pack.add({
     },
 })
 
-local ok, mod = pcall(require, "fzf-lua")
+local mod_name = "fzf-lua"
+local ok, mod = pcall(require, mod_name)
 if not ok then
-  vim.notify("Failed to load fzf-lua.", vim.log.levels.WARN)
+  vim.notify("Failed to load " .. mod_name , vim.log.levels.WARN)
   return
 end
 
-local actions = require('fzf-lua.actions')
-mod.setup({
-})
+mod.setup({})
 
 local keymap = vim.keymap.set
 local s = { silent = true }

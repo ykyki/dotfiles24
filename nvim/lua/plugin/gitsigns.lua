@@ -6,9 +6,10 @@ vim.pack.add({
     },
 })
 
-local ok, mod = pcall(require, "gitsigns")
+local mod_name = "gitsigns"
+local ok, mod = pcall(require, mod_name)
 if not ok then
-  vim.notify("Failed to load gitsigns.", vim.log.levels.WARN)
+  vim.notify("Failed to load " .. mod_name , vim.log.levels.WARN)
   return
 end
 
