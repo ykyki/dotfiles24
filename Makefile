@@ -89,7 +89,6 @@ NVIM_CONFIG_DIR := ${XDG_CONFIG_HOME}/${NVIM_APPNAME}
 nvim:
 	mkdir -p ${XDG_CONFIG_HOME}
 	test -L ${NVIM_CONFIG_DIR} || ${LN} ${PWD}/nvim ${NVIM_CONFIG_DIR}
-	nvim --headless "+Lazy! sync" +qa
 clean-nvim:
 	unlink ${NVIM_CONFIG_DIR}
 	rm -rf ${HOME}/.local/share/${NVIM_APPNAME}

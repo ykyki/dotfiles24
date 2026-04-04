@@ -1,7 +1,6 @@
-require("config.base")
-require("config.vim-option")
+require('config')
+require('keymap')
+require('autocmd')
+-- require('plugin.gitsigns')
+require('colorscheme')
 
-require("config.lazy-nvim")
--- require("config.lsp")
-
-require("config.colorscheme")
