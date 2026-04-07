@@ -20,3 +20,9 @@ autocmd('FileChangedShellPost', {
     pattern = '*',
     command = 'echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None',
 })
+
+-- Restore cursor position
+autocmd('BufReadPost', {
+    pattern = '*',
+    command = [[if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]],
+})
