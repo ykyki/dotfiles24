@@ -36,8 +36,8 @@ mason_lspconfig.setup({
         'lua_ls',
         'ts_ls',
         'denols',
-        'gopls',
-        'rust_analyzer',
+        -- 'gopls',
+        -- 'rust_analyzer',
         'bashls',
     },
 })
