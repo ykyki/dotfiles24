@@ -60,10 +60,20 @@
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": "'v2.7.0'"
     },
+    "nvim-tree.lua": {
+      "rev": "6b5b36659688767fb9f133bb83024ab1466fe5cd",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua",
+      "version": "'v1.13.0'"
+    },
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'v0.10.0'"
+    },
+    "nvim-web-devicons": {
+      "rev": "5b9067899ee6a2538891573500e8fd6ff008440f",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons",
+      "version": "'v0.100'"
     },
     "rainbow-delimiters.nvim": {
       "rev": "50080ed0f44dbc18ae13b81278a01b951a06127a",
