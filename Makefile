@@ -17,7 +17,7 @@ XDG_STATE_HOME  := ${HOME}/.local/state
 XDG_CACHE_HOME  := ${HOME}/.cache
 
 .PHONY: base
-base: xdg-homes zsh vim
+base: xdg-homes zsh vim fzf
 
 .PHONY: xdg-homes
 xdg-homes:
@@ -93,6 +93,12 @@ clean-nvim:
 	unlink ${NVIM_CONFIG_DIR}
 	rm -rf ${HOME}/.local/share/${NVIM_APPNAME}
 	rm -rf ${HOME}/.local/state/${NVIM_APPNAME}
+
+.PHONY: fzf
+FZF_DIR := ${HOME}/.fzf
+fzf:
+	test -d ${FZF_DIR} || git clone --depth 1 https://github.com/junegunn/fzf.git ${FZF_DIR}
+	${FZF_DIR}/install --key-bindings --completion --no-update-rc
 
 .PHONY: claude
 # CLAUDE_CONFIG_DIR := ${XDG_CONFIG_HOME}/claude
