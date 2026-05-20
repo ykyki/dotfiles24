@@ -78,47 +78,6 @@ gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd my_set_prompt
 
-### Hostname hint (下行に user@hostname を表示、入力開始で消す) ###
-typeset -g _HOSTNAME_HINT_SHOWN=0
-
-function _hostname_hint_show() {
-    (( _HOSTNAME_HINT_SHOWN )) && return
-    print -Pn '\e7\e[B\e[2K%F{8}%n@%m%f\e8'
-    _HOSTNAME_HINT_SHOWN=1
-}
-
-function _hostname_hint_clear() {
-    (( ! _HOSTNAME_HINT_SHOWN )) && return
-    print -Pn '\e7\e[B\e[2K\e8'
-    _HOSTNAME_HINT_SHOWN=0
-}
-
-function _hostname_hint_line_init() {
-    print -n $'\n\e[A'
-    _HOSTNAME_HINT_SHOWN=0
-    [[ -z "$BUFFER" ]] && _hostname_hint_show
-}
-
-function _hostname_hint_line_pre_redraw() {
-    if [[ -z "$BUFFER" ]]; then
-        _hostname_hint_show
-    else
-        _hostname_hint_clear
-    fi
-}
-
-function _hostname_hint_line_finish() {
-    _hostname_hint_clear
-}
-
-autoload -Uz add-zle-hook-widget
-zle -N _hostname_hint_line_init
-zle -N _hostname_hint_line_pre_redraw
-zle -N _hostname_hint_line_finish
-add-zle-hook-widget line-init       _hostname_hint_line_init
-add-zle-hook-widget line-pre-redraw _hostname_hint_line_pre_redraw
-add-zle-hook-widget line-finish     _hostname_hint_line_finish
-
 ### General ###
 export EDITOR='vim'
 
