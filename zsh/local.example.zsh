@@ -3,6 +3,9 @@
 #     tmux
 # fi
 
+# Hide user@host prefix in PROMPT (set to 1 on personal machines where it's redundant)
+# export MY_PROMPT_HIDE_USER_HOST=1
+
 # GPG
 # export GPG_TTY=$TTY
 

@@ -42,11 +42,12 @@ function my_set_prompt() {
     # color: black, red, green, yellow, blue, magenta, cyan, white
     # see: man zshzle
     PROMPT=''
-    # PROMPT+="%{$fg[green]%}%n%{$reset_color%}"
-    # PROMPT+='@'
-    # PROMPT+="%{$fg[white]%}%m"
-    # PROMPT+=':'
-    # PROMPT+="%{$fg[yellow]%}%1~%{$reset_color%}"
+    if [[ -z "$MY_PROMPT_HIDE_USER_HOST" ]]; then
+        PROMPT+="%{$fg[green]%}%n%{$reset_color%}"
+        PROMPT+='@'
+        PROMPT+="%{$fg[white]%}%m%{$reset_color%}"
+        PROMPT+=':'
+    fi
     PROMPT+="%{$terminfo[smul]$fg[yellow]%}%1~%{$reset_color%}"
     PROMPT+='%#'
     PROMPT+=' '
