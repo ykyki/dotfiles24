@@ -22,4 +22,4 @@ mod.setup({
 local keymap = vim.keymap.set
 local s = { silent = true }
 keymap("n", "<C-p>", mod.files, s)
-keymap("n", "<leader>fg", mod.live_grep, s)
+keymap("n", ",p", mod.live_grep, s)
