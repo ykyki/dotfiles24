@@ -17,9 +17,11 @@
       "Bash(gh release list:*)",
       "Bash(gh release view:*)"
     ],
+    "ask": [
+      "Bash(rm:*)"
+    ],
     "deny": [
       "Bash(sudo:*)",
-      "Bash(rm:*)",
       "Bash(git push:*)",
       "Read(.env.*)",
       "Write(.env*)",
