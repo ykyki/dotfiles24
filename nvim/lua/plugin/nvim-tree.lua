@@ -33,6 +33,13 @@ mod.setup({
     diagnostics = {
         enable = true,
     },
+    on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+        api.config.mappings.default_on_attach(bufnr)
+
+        local opts = { buffer = bufnr, silent = true, nowait = true }
+        vim.keymap.set("n", "?", api.tree.toggle_help, opts)
+    end,
 })
 
 local keymap = vim.keymap.set
@@ -62,4 +69,4 @@ keymap("n", "\\", "<cmd>NvimTreeToggle<CR>", s)
 --   H              隠しファイル表示切替
 --   I              gitignore 対象表示切替
 --   q              ツリーを閉じる
---   g?             ヘルプ (全キーマップ一覧)
+--   ? / g?         ヘルプ (全キーマップ一覧)
