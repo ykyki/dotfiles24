@@ -1,3 +1,5 @@
+vim.g.copilot_no_tab_map = true
+
 vim.pack.add({
     {
         src = "https://github.com/github/copilot.vim",
@@ -8,3 +10,4 @@ vim.pack.add({
 
 vim.keymap.set("i", "<C-]>", "<Plug>(copilot-next)")
 vim.keymap.set("i", "<C-/>", "<Plug>(copilot-dismiss)")
+vim.keymap.set("i", "<C-l>", 'copilot#Accept("")', { expr = true, replace_keycodes = false })
