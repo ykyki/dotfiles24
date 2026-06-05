@@ -17,9 +17,6 @@
       "Bash(gh release list:*)",
       "Bash(gh release view:*)"
     ],
-    "ask": [
-      "Bash(rm:*)"
-    ],
     "deny": [
       "Bash(sudo:*)",
       "Bash(git push:*)",
@@ -27,10 +24,13 @@
       "Write(.env*)",
       "Bash(curl:*)",
       "Bash(wget:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)"
     ]
   },
-  "model": "opus",
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
-  }
+  },
+  "model": "opus"
 }
