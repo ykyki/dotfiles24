@@ -21,12 +21,12 @@
       "Bash(sudo:*)",
       "Bash(git push:*)",
       "Read(.env.*)",
-      "Write(.env*)",
-      "Bash(curl:*)",
-      "Bash(wget:*)"
+      "Write(.env*)"
     ],
     "ask": [
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)"
     ]
   },
   "enabledPlugins": {
