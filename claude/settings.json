@@ -29,8 +29,9 @@
       "Bash(wget:*)"
     ]
   },
+  "model": "opus",
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true
-  },
-  "model": "opus"
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  }
 }
