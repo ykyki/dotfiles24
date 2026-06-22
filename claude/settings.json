@@ -26,7 +26,8 @@
     "ask": [
       "Bash(rm:*)",
       "Bash(curl:*)",
-      "Bash(wget:*)"
+      "Bash(wget:*)",
+      "Bash(git commit:*)"
     ]
   },
   "model": "opus",
