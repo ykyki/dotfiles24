@@ -19,7 +19,17 @@ mod.setup({
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
         preset = 'none',
-        ['<Tab>'] = { 'select_and_accept', 'fallback' },
+        ['<Tab>'] = {
+            function()
+                -- copilot.vim のゴーストテキスト候補があれば受け入れる
+                if vim.fn['copilot#GetDisplayedSuggestion']().text ~= '' then
+                    vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](''), 'i', false)
+                    return true
+                end
+            end,
+            'select_and_accept',
+            'fallback',
+        },
         ['<C-n>'] = { 'select_next', 'fallback' },
         ['<C-p>'] = { 'select_prev', 'fallback' },
         ['<C-e>'] = { 'cancel', 'fallback' },
