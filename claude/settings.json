@@ -21,7 +21,8 @@
       "Bash(sudo:*)",
       "Bash(git push:*)",
       "Read(.env.*)",
-      "Read(.env*)"
+      "Read(.env*)",
+      "Edit(.env*)"
     ],
     "ask": [
       "Bash(rm:*)",
