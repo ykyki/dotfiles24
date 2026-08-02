@@ -43,7 +43,7 @@ function copypath() {
     echo $TARGETPATH
 
     if   [ -n $TARGETPATH ]; then
-        echo -n $TARGETPATH | gocopy
+        echo -n $TARGETPATH | pbcopy
     else
         echo 'usage: copypath [target]'
     fi

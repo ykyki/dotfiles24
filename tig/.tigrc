@@ -22,8 +22,8 @@ set split-view-height = 80%
 set diff-context = 5
 # set diff-highlight = true
 
-bind generic I @?sh -c "printf '%s' %(commit) | gocopy"
-bind refs    I @?sh -c "printf '%s' %(branch) | gocopy"
+bind generic I @?sh -c "printf '%s' %(commit) | pbcopy"
+bind refs    I @?sh -c "printf '%s' %(branch) | pbcopy"
 bind generic g move-first-line
 bind generic G move-last-line
 bind main    G move-last-line
