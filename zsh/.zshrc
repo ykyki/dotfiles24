@@ -51,28 +51,28 @@ function my_set_prompt() {
     PROMPT+="%{$terminfo[smul]$fg[yellow]%}%1~%{$reset_color%}"
     PROMPT+='%#'
     PROMPT+=' '
-    RPROMPT=''
-    RPROMPT+='[%?]'
-    if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
-        RPROMPT+="%{$fg[yellow]%}"
-        # RPROMPT+='@'
-        RPROMPT+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}  # escape %
-        RPROMPT+="%{$reset_color%}"
-        RPROMPT+='|'
-        (( VCS_STATUS_COMMITS_BEHIND )) && RPROMPT+="%{$fg[blue]%}"    && RPROMPT+='⇣' && RPROMPT+=$VCS_STATUS_COMMITS_BEHIND && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_COMMITS_AHEAD  )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='⇡' && RPROMPT+=$VCS_STATUS_COMMITS_AHEAD  && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_STAGED     )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='+' && RPROMPT+=$VCS_STATUS_NUM_STAGED     && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_UNSTAGED   )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='!' && RPROMPT+=$VCS_STATUS_NUM_UNSTAGED   && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED  && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS  && RPROMPT+="%{$reset_color%}"
-        (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED    && RPROMPT+="%{$reset_color%}"
-    else
-        # RPROMPT+="%{$fg[yellow]%}%3d%{$reset_color%}"
-    fi
-    # RPROMPT+="%{$fg[blue]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
-    # RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
-    CURRENT_TIME=$(date "+%H:%M:%S")
-    RPROMPT+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
+    # RPROMPT=''
+    # RPROMPT+='[%?]'
+    # if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
+    #     RPROMPT+="%{$fg[yellow]%}"
+    #     # RPROMPT+='@'
+    #     RPROMPT+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}  # escape %
+    #     RPROMPT+="%{$reset_color%}"
+    #     RPROMPT+='|'
+    #     (( VCS_STATUS_COMMITS_BEHIND )) && RPROMPT+="%{$fg[blue]%}"    && RPROMPT+='⇣' && RPROMPT+=$VCS_STATUS_COMMITS_BEHIND && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_COMMITS_AHEAD  )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='⇡' && RPROMPT+=$VCS_STATUS_COMMITS_AHEAD  && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_NUM_STAGED     )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='+' && RPROMPT+=$VCS_STATUS_NUM_STAGED     && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_NUM_UNSTAGED   )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='!' && RPROMPT+=$VCS_STATUS_NUM_UNSTAGED   && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED  && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS  && RPROMPT+="%{$reset_color%}"
+    #     (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED    && RPROMPT+="%{$reset_color%}"
+    # else
+    #     # RPROMPT+="%{$fg[yellow]%}%3d%{$reset_color%}"
+    # fi
+    # # RPROMPT+="%{$fg[blue]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
+    # # RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
+    # CURRENT_TIME=$(date "+%H:%M:%S")
+    # RPROMPT+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
     setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
 }
 gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
