@@ -1,0 +1,6 @@
+onboarding = false
+# doc: https://herdr.dev/
+# ref: `herdr --default-config`
+
+[keys]
+prefix = "ctrl+q"
