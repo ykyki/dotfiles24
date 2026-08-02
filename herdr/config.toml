@@ -7,9 +7,12 @@ onboarding = false
 prefix = "ctrl+q"
 copy_mode = "prefix+["
 
+next_tab           = "prefix+shift+j"
+previous_tab       = "prefix+shift+k"
 new_workspace      = "prefix+shift+c"
-next_workspace     = "prefix+shift+j"
-previous_workspace = "prefix+shift+k"
+next_workspace     = "prefix+shift+n"
+previous_workspace = "prefix+shift+p"
+
 
 # popup: tig
 [[keys.command]]
