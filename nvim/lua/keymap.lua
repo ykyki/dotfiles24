@@ -11,6 +11,22 @@ keymap("n", "<C-w>\\", "<cmd>vsplit<CR>", s)
 keymap("n", "<C-w>-", "<cmd>split<CR>", s)
 keymap("n", "<Leader>ex", "<cmd>Ex %:p:h<CR>") -- Open Netrw in the current file's directory
 
+-- Copy `path:line` (or `path:l1-l2` in visual) for pasting into AI agents
+keymap("n", "<leader>yl", function()
+    local ref = vim.fn.expand("%:.") .. ":" .. vim.fn.line(".")
+    vim.fn.setreg("+", ref)
+    vim.notify("copied: " .. ref)
+end, s)
+keymap("x", "<leader>yl", function()
+    local path = vim.fn.expand("%:.")
+    local l1, l2 = vim.fn.line("v"), vim.fn.line(".")
+    local lo, hi = math.min(l1, l2), math.max(l1, l2)
+    local ref = path .. ":" .. lo .. (lo ~= hi and ("-" .. hi) or "")
+    vim.fn.setreg("+", ref)
+    vim.notify("copied: " .. ref)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+end, s)
+
 -- ########
 -- vim.pack
 -- ########
