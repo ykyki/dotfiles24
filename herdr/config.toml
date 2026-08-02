@@ -1,0 +1,24 @@
+# doc: https://herdr.dev/
+# ref: `herdr --default-config`
+
+onboarding = false
+
+[keys]
+prefix = "ctrl+q"
+copy_mode = "prefix+["
+
+next_tab           = "prefix+shift+j"
+previous_tab       = "prefix+shift+k"
+new_workspace      = "prefix+shift+c"
+next_workspace     = "prefix+shift+n"
+previous_workspace = "prefix+shift+p"
+
+
+# popup: tig
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "tig"
+width = "90%"
+height = "90%"
+
