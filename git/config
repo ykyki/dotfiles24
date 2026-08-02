@@ -9,5 +9,3 @@
 	root = ~/ghq
 [include]
 	path = local.gitconfig
-[wt] # git-wt is required (https://github.com/k1LoW/git-wt)
-	basedir = .ykyki/wt
