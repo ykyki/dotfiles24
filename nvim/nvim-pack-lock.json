@@ -75,6 +75,11 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons",
       "version": "'v0.100'"
     },
+    "persistence.nvim": {
+      "rev": "c45ff862b53ce07a853a753fb0b33e148dbb99d2",
+      "src": "https://github.com/folke/persistence.nvim",
+      "version": "'v3.1.0'"
+    },
     "rainbow-delimiters.nvim": {
       "rev": "50080ed0f44dbc18ae13b81278a01b951a06127a",
       "src": "https://github.com/HiPhish/rainbow-delimiters.nvim",
