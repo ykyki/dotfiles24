@@ -4,3 +4,5 @@ onboarding = false
 
 [keys]
 prefix = "ctrl+q"
+copy_mode = "prefix+["
+
