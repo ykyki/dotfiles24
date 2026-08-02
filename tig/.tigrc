@@ -24,6 +24,7 @@ set diff-context = 5
 
 bind generic I @?sh -c "printf '%s' %(commit) | pbcopy"
 bind refs    I @?sh -c "printf '%s' %(branch) | pbcopy"
+bind status  I @?sh -c "printf '%s' %(file) | pbcopy"
 bind generic g move-first-line
 bind generic G move-last-line
 bind main    G move-last-line
