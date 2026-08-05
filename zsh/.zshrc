@@ -51,33 +51,47 @@ function my_set_prompt() {
     PROMPT+="%{$terminfo[smul]$fg[yellow]%}%1~%{$reset_color%}"
     PROMPT+='%#'
     PROMPT+=' '
-    # RPROMPT=''
-    # RPROMPT+='[%?]'
-    # if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
-    #     RPROMPT+="%{$fg[yellow]%}"
-    #     # RPROMPT+='@'
-    #     RPROMPT+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}  # escape %
-    #     RPROMPT+="%{$reset_color%}"
-    #     RPROMPT+='|'
-    #     (( VCS_STATUS_COMMITS_BEHIND )) && RPROMPT+="%{$fg[blue]%}"    && RPROMPT+='⇣' && RPROMPT+=$VCS_STATUS_COMMITS_BEHIND && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_COMMITS_AHEAD  )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='⇡' && RPROMPT+=$VCS_STATUS_COMMITS_AHEAD  && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_NUM_STAGED     )) && RPROMPT+="%{$fg[green]%}"   && RPROMPT+='+' && RPROMPT+=$VCS_STATUS_NUM_STAGED     && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_NUM_UNSTAGED   )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='!' && RPROMPT+=$VCS_STATUS_NUM_UNSTAGED   && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_NUM_UNTRACKED  )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='?' && RPROMPT+=$VCS_STATUS_NUM_UNTRACKED  && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_NUM_CONFLICTS  )) && RPROMPT+="%{$fg[magenta]%}" && RPROMPT+='x' && RPROMPT+=$VCS_STATUS_NUM_CONFLICTS  && RPROMPT+="%{$reset_color%}"
-    #     (( VCS_STATUS_NUM_CHANGED    )) && RPROMPT+="%{$fg[red]%}"     && RPROMPT+='%' && RPROMPT+=$VCS_STATUS_NUM_CHANGED    && RPROMPT+="%{$reset_color%}"
-    # else
-    #     # RPROMPT+="%{$fg[yellow]%}%3d%{$reset_color%}"
-    # fi
-    # # RPROMPT+="%{$fg[blue]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
-    # # RPROMPT+="%{$fg[blue]%}[%D{%H:%M:%S}]%{$reset_color%}"
-    # CURRENT_TIME=$(date "+%H:%M:%S")
-    # RPROMPT+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
     setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
+    my_set_rprompt
+    RPROMPT=$MY_RPROMPT_FULL
+}
+function my_set_rprompt() {
+    MY_RPROMPT_FULL=''
+    MY_RPROMPT_FULL+='[%?]'
+    if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
+        MY_RPROMPT_FULL+="%{$fg[yellow]%}"
+        MY_RPROMPT_FULL+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}  # escape %
+        MY_RPROMPT_FULL+="%{$reset_color%}"
+        MY_RPROMPT_FULL+='|'
+        (( VCS_STATUS_COMMITS_BEHIND )) && MY_RPROMPT_FULL+="%{$fg[blue]%}"    && MY_RPROMPT_FULL+='⇣' && MY_RPROMPT_FULL+=$VCS_STATUS_COMMITS_BEHIND && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_COMMITS_AHEAD  )) && MY_RPROMPT_FULL+="%{$fg[green]%}"   && MY_RPROMPT_FULL+='⇡' && MY_RPROMPT_FULL+=$VCS_STATUS_COMMITS_AHEAD  && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_STAGED     )) && MY_RPROMPT_FULL+="%{$fg[green]%}"   && MY_RPROMPT_FULL+='+' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_STAGED     && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_UNSTAGED   )) && MY_RPROMPT_FULL+="%{$fg[red]%}"     && MY_RPROMPT_FULL+='!' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_UNSTAGED   && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_UNTRACKED  )) && MY_RPROMPT_FULL+="%{$fg[red]%}"     && MY_RPROMPT_FULL+='?' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_UNTRACKED  && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_CONFLICTS  )) && MY_RPROMPT_FULL+="%{$fg[magenta]%}" && MY_RPROMPT_FULL+='x' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_CONFLICTS  && MY_RPROMPT_FULL+="%{$reset_color%}"
+        (( VCS_STATUS_NUM_CHANGED    )) && MY_RPROMPT_FULL+="%{$fg[red]%}"     && MY_RPROMPT_FULL+='%' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_CHANGED    && MY_RPROMPT_FULL+="%{$reset_color%}"
+    fi
+    local CURRENT_TIME=$(date "+%H:%M:%S")
+    MY_RPROMPT_FULL+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
+}
+function my_rprompt_toggle() {
+    if [[ -n "$BUFFER" ]]; then
+        if [[ -n "$RPROMPT" ]]; then
+            RPROMPT=''
+            zle reset-prompt
+        fi
+    else
+        if [[ "$RPROMPT" != "$MY_RPROMPT_FULL" ]]; then
+            RPROMPT=$MY_RPROMPT_FULL
+            zle reset-prompt
+        fi
+    fi
 }
 gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
 autoload -Uz add-zsh-hook
+autoload -Uz add-zle-hook-widget
 add-zsh-hook precmd my_set_prompt
+add-zle-hook-widget line-pre-redraw my_rprompt_toggle
 
 ### General ###
 export EDITOR='vim'
