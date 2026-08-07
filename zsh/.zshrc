@@ -71,8 +71,8 @@ function my_set_rprompt() {
         (( VCS_STATUS_NUM_CONFLICTS  )) && MY_RPROMPT_FULL+="%{$fg[magenta]%}" && MY_RPROMPT_FULL+='x' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_CONFLICTS  && MY_RPROMPT_FULL+="%{$reset_color%}"
         (( VCS_STATUS_NUM_CHANGED    )) && MY_RPROMPT_FULL+="%{$fg[red]%}"     && MY_RPROMPT_FULL+='%' && MY_RPROMPT_FULL+=$VCS_STATUS_NUM_CHANGED    && MY_RPROMPT_FULL+="%{$reset_color%}"
     fi
-    local CURRENT_TIME=$(date "+%H:%M:%S")
-    MY_RPROMPT_FULL+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
+    # local CURRENT_TIME=$(date "+%H:%M:%S")
+    # MY_RPROMPT_FULL+="%{$fg[blue]%}[${CURRENT_TIME}]%{$reset_color%}"
 }
 function my_rprompt_toggle() {
     if [[ -n "$BUFFER" ]]; then
