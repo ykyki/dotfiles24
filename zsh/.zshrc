@@ -133,9 +133,9 @@ zshaddhistory() {
 typeset -gU PATH path
 typeset -gU FPATH fpath
 path=(
-    '/usr/local/bin'(N-/)
-    "$HOME/.local/bin"(N-)
     "$HOME/.local/share/mise/shims"(N-)
+    "$HOME/.local/bin"(N-)
+    '/usr/local/bin'(N-/)
     '/opt/homebrew/bin'(N-/)
     '/opt/homebrew/opt/llvm/bin'(N-/)
     '/usr/bin'(N-/)
