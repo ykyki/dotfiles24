@@ -6,7 +6,6 @@ keymap("n", "<space>", "<Nop>")
 
 keymap("n", "j", "gj", s)
 keymap("n", "k", "gk", s)
-keymap("n", "gT", "<cmd>tabnew<CR>", s)
 keymap("n", "<C-w>\\", "<cmd>vsplit<CR>", s)
 keymap("n", "<C-w>-", "<cmd>split<CR>", s)
 keymap("n", "<Leader>ex", "<cmd>Ex %:p:h<CR>") -- Open Netrw in the current file's directory

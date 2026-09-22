@@ -88,7 +88,6 @@ nnoremap <silent> X  :bd<CR>
 " nnoremap <silent> X  :tabc<CR>
 " nnoremap <silent> gJ :tabmove -1<CR>
 " nnoremap <silent> gK :tabmove +1<CR>
-nnoremap <silent> gT :enew<CR>
 " nnoremap Y y$
 nnoremap <C-w>- :sp<CR>
 nnoremap <C-w>\ :vs<CR>
