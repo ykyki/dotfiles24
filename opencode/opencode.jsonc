@@ -1,0 +1,43 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": ["openrouter"],
+  "model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "small_model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "permission": {
+    "webfetch": "allow",
+    "websearch": "allow",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny"
+    },
+    "edit": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "gh run list*": "allow",
+      "gh run view*": "allow",
+      "gh workflow list*": "allow",
+      "gh workflow view*": "allow",
+      "gh pr list*": "allow",
+      "gh pr view*": "allow",
+      "gh pr diff*": "allow",
+      "gh pr checks*": "allow",
+      "gh issue list*": "allow",
+      "gh issue view*": "allow",
+      "gh repo view*": "allow",
+      "gh release list*": "allow",
+      "gh release view*": "allow",
+      "rm *": "ask",
+      "curl *": "ask",
+      "wget *": "ask",
+      "git commit*": "ask",
+      "sudo *": "deny",
+      "git push*": "deny",
+      "git add*": "deny"
+    }
+  }
+}

@@ -113,6 +113,13 @@ claude:
 	test -L ${CLAUDE_CONFIG_DIR}/settings.json || ${LN} ${PWD}/claude/settings.json ${CLAUDE_CONFIG_DIR}/settings.json
 	test -L ${CLAUDE_CONFIG_DIR}/CLAUDE.md || ${LN} ${PWD}/claude/CLAUDE.md ${CLAUDE_CONFIG_DIR}/CLAUDE.md
 
+.PHONY: opencode
+OPENCODE_CONFIG_DIR := ${XDG_CONFIG_HOME}/opencode
+opencode:
+	mkdir -p ${OPENCODE_CONFIG_DIR}
+	test -L ${OPENCODE_CONFIG_DIR}/opencode.jsonc || ${LN} ${PWD}/opencode/opencode.jsonc ${OPENCODE_CONFIG_DIR}/opencode.jsonc
+	test -L ${OPENCODE_CONFIG_DIR}/AGENTS.md || ${LN} ${PWD}/opencode/AGENTS.md ${OPENCODE_CONFIG_DIR}/AGENTS.md
+
 .PHONY: zed
 ZED_CONFIG_DIR := ${XDG_CONFIG_HOME}/zed
 zed:
