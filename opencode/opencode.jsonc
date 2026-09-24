@@ -3,6 +3,9 @@
   "enabled_providers": ["openrouter"],
   "model": "openrouter/deepseek/deepseek-v4.1-flash",
   "small_model": "openrouter/deepseek/deepseek-v4.1-flash",
+  "tabs": {
+      "mode": "off",
+  },
   "permission": {
     "webfetch": "allow",
     "websearch": "allow",
