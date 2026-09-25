@@ -20,7 +20,6 @@
     "deny": [
       "Bash(sudo:*)",
       "Bash(git push:*)",
-      "Bash(git add:*)",
       "Read(.env.*)",
       "Read(.env*)",
       "Edit(.env*)"
@@ -29,6 +28,7 @@
       "Bash(rm:*)",
       "Bash(curl:*)",
       "Bash(wget:*)",
+      "Bash(git add:*)",
       "Bash(git commit:*)"
     ]
   },
