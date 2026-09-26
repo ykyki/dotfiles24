@@ -21,6 +21,7 @@
     },
     "bash": {
       "*": "ask",
+      "sudo *": "deny",
       "gh run list*": "allow",
       "gh run view*": "allow",
       "gh workflow list*": "allow",
@@ -37,10 +38,9 @@
       "rm *": "ask",
       "curl *": "ask",
       "wget *": "ask",
+      "git add*": "ask",
       "git commit*": "ask",
-      "sudo *": "deny",
-      "git push*": "deny",
-      "git add*": "deny"
+      "git push*": "deny"
     }
   }
 }
