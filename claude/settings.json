@@ -37,5 +37,6 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true
   },
-  "disableRemoteControl": true
+  "disableRemoteControl": true,
+  "attribution": false
 }
