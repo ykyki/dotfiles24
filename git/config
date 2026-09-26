@@ -3,6 +3,8 @@
 	editor     = vim
 [init]
 	defaultBranch = main
+[user]
+	useConfigOnly = true
 [credential]
 	helper = cache --timeout=86400
 [ghq]
