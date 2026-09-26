@@ -19,7 +19,6 @@
     ],
     "deny": [
       "Bash(sudo:*)",
-      "Bash(git push:*)",
       "Read(.env.*)",
       "Read(.env*)",
       "Edit(.env*)"
@@ -29,7 +28,8 @@
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   },
   "model": "opus",

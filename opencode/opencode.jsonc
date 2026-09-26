@@ -4,7 +4,7 @@
   "model": "openrouter/deepseek/deepseek-v4.1-flash",
   "small_model": "openrouter/deepseek/deepseek-v4.1-flash",
   "tabs": {
-      "mode": "off",
+      "mode": "off"
   },
   "permission": {
     "webfetch": "allow",
@@ -40,7 +40,7 @@
       "wget *": "ask",
       "git add*": "ask",
       "git commit*": "ask",
-      "git push*": "deny"
+      "git push*": "ask"
     }
   }
 }
