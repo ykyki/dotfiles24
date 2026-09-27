@@ -21,8 +21,9 @@ mod.setup({
         preset = 'none',
         ['<Tab>'] = {
             function()
-                -- copilot.vim のゴーストテキスト候補があれば受け入れる
-                if vim.fn['copilot#GetDisplayedSuggestion']().text ~= '' then
+                -- copilot.vim が読み込まれている場合のみ、ゴーストテキスト候補を確認・受け入れる
+                if vim.fn.exists('*copilot#GetDisplayedSuggestion') == 1
+                    and vim.fn['copilot#GetDisplayedSuggestion']().text ~= '' then
                     vim.api.nvim_feedkeys(vim.fn['copilot#Accept'](''), 'i', false)
                     return true
                 end

@@ -17,3 +17,5 @@ vim.lsp.config('lua_ls', {
         },
     },
 })
+
+require('plugin.copilot')
