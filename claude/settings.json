@@ -19,6 +19,8 @@
     ],
     "deny": [
       "Bash(sudo:*)",
+      "Bash(env:*)",
+      "Bash(printenv:*)",
       "Read(.env.*)",
       "Read(.env*)",
       "Edit(.env*)"

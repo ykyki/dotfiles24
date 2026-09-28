@@ -22,6 +22,8 @@
     "bash": {
       "*": "ask",
       "sudo *": "deny",
+      "env*": "deny",
+      "printenv*": "deny",
       "gh run list*": "allow",
       "gh run view*": "allow",
       "gh workflow list*": "allow",
