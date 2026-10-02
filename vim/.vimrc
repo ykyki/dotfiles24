@@ -31,6 +31,7 @@ autocmd FileType php       setlocal expandtab   tabstop=4 shiftwidth=0
 autocmd FileType tex       setlocal noexpandtab tabstop=4 shiftwidth=0
 autocmd FileType sbt       setlocal expandtab   tabstop=2 shiftwidth=0
 autocmd FileType gitconfig setlocal noexpandtab tabstop=4 shiftwidth=0
+autocmd FileType tsv       setlocal noexpandtab tabstop=8 shiftwidth=0
 
 set nospell
 " set spelllang=en,cjk
