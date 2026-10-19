@@ -120,14 +120,6 @@ opencode:
 	test -L ${OPENCODE_CONFIG_DIR}/opencode.jsonc || ${LN} ${PWD}/opencode/opencode.jsonc ${OPENCODE_CONFIG_DIR}/opencode.jsonc
 	test -L ${OPENCODE_CONFIG_DIR}/AGENTS.md || ${LN} ${PWD}/opencode/AGENTS.md ${OPENCODE_CONFIG_DIR}/AGENTS.md
 
-.PHONY: zed
-ZED_CONFIG_DIR := ${XDG_CONFIG_HOME}/zed
-zed:
-	mkdir -p ${ZED_CONFIG_DIR}
-	test -L ${ZED_CONFIG_DIR}/settings.json || ${LN} ${PWD}/zed/settings.json ${ZED_CONFIG_DIR}/settings.json
-	test -L ${ZED_CONFIG_DIR}/keymap.json   || ${LN} ${PWD}/zed/keymap.json   ${ZED_CONFIG_DIR}/keymap.json
-	test -L ${ZED_CONFIG_DIR}/tasks.json    || ${LN} ${PWD}/zed/tasks.json    ${ZED_CONFIG_DIR}/tasks.json
-
 .PHONY: container-local container-remote
 USER_NAME := ykyki
 IMAGE_NAME := d24-ubuntu
