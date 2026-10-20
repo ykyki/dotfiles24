@@ -69,12 +69,6 @@ tig:
 idea:
 	test -L ${HOME}/.ideavimrc || ln -sv ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
 
-.PHONY: alacritty
-ALACRITTY_CONFIG_DIR := ${XDG_CONFIG_HOME}/alacritty
-alacritty:
-	mkdir -p ${ALACRITTY_CONFIG_DIR}
-	test -L ${ALACRITTY_CONFIG_DIR}/alacritty.toml || ${LN} ${PWD}/alacritty/alacritty.toml ${ALACRITTY_CONFIG_DIR}/alacritty.toml
-
 .PHONY: ghostty
 GHOSTTY_CONFIG_DIR := ${XDG_CONFIG_HOME}/ghostty
 ghostty:
