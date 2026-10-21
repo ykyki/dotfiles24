@@ -99,20 +99,16 @@ fzf:
 	test -d ${FZF_DIR} || git clone --depth 1 https://github.com/junegunn/fzf.git ${FZF_DIR}
 	${FZF_DIR}/install --key-bindings --completion --no-update-rc
 
-.PHONY: claude
-# CLAUDE_CONFIG_DIR := ${XDG_CONFIG_HOME}/claude
-CLAUDE_CONFIG_DIR := ${HOME}/.claude
-claude:
-	mkdir -p ${CLAUDE_CONFIG_DIR}
-	test -L ${CLAUDE_CONFIG_DIR}/settings.json || ${LN} ${PWD}/claude/settings.json ${CLAUDE_CONFIG_DIR}/settings.json
-	test -L ${CLAUDE_CONFIG_DIR}/CLAUDE.md || ${LN} ${PWD}/claude/CLAUDE.md ${CLAUDE_CONFIG_DIR}/CLAUDE.md
-
-.PHONY: opencode
+.PHONY: agent
+AGENTS_DIR          := ${PWD}/.agents
+CLAUDE_CONFIG_DIR   := ${HOME}/.claude
 OPENCODE_CONFIG_DIR := ${XDG_CONFIG_HOME}/opencode
-opencode:
-	mkdir -p ${OPENCODE_CONFIG_DIR}
-	test -L ${OPENCODE_CONFIG_DIR}/opencode.jsonc || ${LN} ${PWD}/opencode/opencode.jsonc ${OPENCODE_CONFIG_DIR}/opencode.jsonc
-	test -L ${OPENCODE_CONFIG_DIR}/AGENTS.md || ${LN} ${PWD}/opencode/AGENTS.md ${OPENCODE_CONFIG_DIR}/AGENTS.md
+agent:
+	mkdir -p ${CLAUDE_CONFIG_DIR} ${OPENCODE_CONFIG_DIR}
+	test -L ${CLAUDE_CONFIG_DIR}/settings.json    || ${LN} ${AGENTS_DIR}/claude/settings.json    ${CLAUDE_CONFIG_DIR}/settings.json
+	test -L ${CLAUDE_CONFIG_DIR}/CLAUDE.md        || ${LN} ${AGENTS_DIR}/CLAUDE.md               ${CLAUDE_CONFIG_DIR}/CLAUDE.md
+	test -L ${OPENCODE_CONFIG_DIR}/opencode.jsonc || ${LN} ${AGENTS_DIR}/opencode/opencode.jsonc ${OPENCODE_CONFIG_DIR}/opencode.jsonc
+	test -L ${OPENCODE_CONFIG_DIR}/AGENTS.md      || ${LN} ${AGENTS_DIR}/AGENTS.md               ${OPENCODE_CONFIG_DIR}/AGENTS.md
 
 .PHONY: container-local container-remote
 USER_NAME := ykyki
