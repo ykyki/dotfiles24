@@ -32,6 +32,7 @@
 quit-after-last-window-closed = true
 
 # see: ghostty +list-themes
+# theme = Abernathy
 # theme = Birds Of Paradise
 theme = 0x96f
 
