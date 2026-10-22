@@ -223,6 +223,15 @@ command! -bang -nargs=* Rg
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
 let g:seoul256_background = 233
+" 背景を不透明にすると tmux の window-style が隠れ, inactive pane が active と区別できなくなる
+augroup TransparentBackground
+    autocmd!
+    autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE
+        \ | highlight NonText guibg=NONE ctermbg=NONE
+        \ | highlight EndOfBuffer guibg=NONE ctermbg=NONE
+        \ | highlight LineNr guibg=NONE ctermbg=NONE
+        \ | highlight SignColumn guibg=NONE ctermbg=NONE
+augroup END
 silent! colorscheme seoul256
 
 " ----- vim-indent-guides
