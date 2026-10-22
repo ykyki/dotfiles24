@@ -5,7 +5,8 @@ vim.pack.add({
     },
 })
 
-require('jellybeans').setup({})
+-- Why not an opaque background: it hides tmux's window-style, so an inactive pane looks the same as the active one.
+require('jellybeans').setup({ transparent = true })
 vim.cmd.colorscheme('jellybeans-warm')
 
 vim.lsp.config('lua_ls', {

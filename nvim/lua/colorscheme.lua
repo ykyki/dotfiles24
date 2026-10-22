@@ -9,5 +9,6 @@ vim.pack.add({
     },
 })
 
-require('kanagawa').setup({})
+-- Why not an opaque background: it hides tmux's window-style, so an inactive pane looks the same as the active one.
+require('kanagawa').setup({ transparent = true })
 vim.cmd.colorscheme('kanagawa')
