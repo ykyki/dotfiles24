@@ -54,7 +54,7 @@ tmux:
 
 .PHONY: vim
 vim:
-	test -L ${HOME}/.vimrc || ln -sv ${PWD}/vim/.vimrc ${HOME}/.vimrc
+	test -L ${HOME}/.vimrc || ${LN} ${PWD}/vim/.vimrc ${HOME}/.vimrc
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@# vim +PlugInstall +qall
 	vim -es -u ${HOME}/.vimrc +PlugInstall +qall
@@ -63,11 +63,11 @@ vim:
 TIG_CONFIG_DIR := ${XDG_CONFIG_HOME}/tig
 tig:
 	mkdir -p ${TIG_CONFIG_DIR}
-	test -L ${TIG_CONFIG_DIR}/config || ln -sv ${PWD}/tig/.tigrc ${TIG_CONFIG_DIR}/config
+	test -L ${TIG_CONFIG_DIR}/config || ${LN} ${PWD}/tig/.tigrc ${TIG_CONFIG_DIR}/config
 
 .PHONY: idea
 idea:
-	test -L ${HOME}/.ideavimrc || ln -sv ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
+	test -L ${HOME}/.ideavimrc || ${LN} ${PWD}/idea/.ideavimrc ${HOME}/.ideavimrc
 
 .PHONY: ghostty
 GHOSTTY_CONFIG_DIR := ${XDG_CONFIG_HOME}/ghostty
