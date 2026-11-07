@@ -17,4 +17,5 @@
 When running shell commands, follow these preferences:
 
 - Use `jq` (never `python`) to read and query JSON files.
+- Write shell commands in POSIX sh syntax with all expansions quoted, so they behave identically under bash and zsh.
 
