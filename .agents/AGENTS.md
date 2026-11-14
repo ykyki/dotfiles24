@@ -18,4 +18,5 @@ When running shell commands, follow these preferences:
 
 - Use `jq` (never `python`) to read and query JSON files.
 - Write shell commands in POSIX sh syntax with all expansions quoted, so they behave identically under bash and zsh.
+- The shell is zsh: unquoted `$var` is not word-split and an unmatched glob is an error, so quote literal `?*[]{}^~`, pass arguments individually, and let `find`/`git ls-files` expand patterns.
 
