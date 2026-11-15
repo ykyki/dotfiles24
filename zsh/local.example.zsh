@@ -3,6 +3,13 @@
 #     tmux
 # fi
 
+# auto start herdr on ssh login
+# 環境変数での入れ子防止は不十分: 常駐中の herdr サーバが ssh 環境のみを継承していると、
+# ペイン内シェルも自動起動条件を満たして herdr を再起動し続ける。親プロセスが sshd のときだけ起動する
+# if [[ -o interactive && -n "$SSH_CONNECTION" && "$(ps -o comm= -p "$PPID" 2>/dev/null)" == sshd* ]] && command -v herdr >/dev/null 2>&1; then
+#     exec herdr
+# fi
+
 # Hide user@host prefix in PROMPT (set to 1 on personal machines where it's redundant)
 # export MY_PROMPT_HIDE_USER_HOST=1
 

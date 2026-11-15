@@ -4,7 +4,7 @@
 onboarding = false
 
 [keys]
-prefix = "ctrl+q"
+prefix = "ctrl+b"
 copy_mode = "prefix+["
 
 # next_tab           = "prefix+shift+j"
