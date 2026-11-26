@@ -168,7 +168,6 @@ zinit wait lucid light-mode as'null' id-as'local-init' \
         [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
         [[ $commands[mise] ]] && eval "$(mise activate zsh)"
         [[ $commands[podman] ]] && source <(podman completion zsh)
-        [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
         [[ $commands[limactl] ]] && source <(limactl completion zsh)
         [[ $commands[uv] ]] && source <(uv generate-shell-completion zsh)
         [[ $commands[uvx] ]] && source <(uvx --generate-shell-completion zsh)
